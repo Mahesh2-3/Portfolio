@@ -48,7 +48,7 @@ const page = () => {
             </div>
           </div>
           <div className="text-gray-400 flex justify-center items-center text-xl h-[20vh] w-[100%] gap-3 sm:flex-row flex-col">
-           <span> "Let's Work Together! </span><span><a className="underline underline-offset-8 text-white px-3" href="http://localhost:3000/contactme">Click This</a> To Contact Me"</span>
+           <span> `"Let's Work Together!` </span><span><a className="underline underline-offset-8 text-white px-3" href="https://mahesh2-3.github.io/Portfolio/contactme">Click This</a> `To Contact Me"`</span>
           </div>
         </div>
       </motion.div>
