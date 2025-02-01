@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family:sans-serif;
+  scrollbar-width: none;
+}
+
+.nextjs-toast, 
+.nextjs-static-indicator-toast-wrapper {
+  display: none !important;
+}
+

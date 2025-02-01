@@ -1,0 +1,64 @@
+.detcard {
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    transition: all .3s;
+    border-radius: 27px;
+   }
+   
+   .detcard2 {
+    background-color: #0a0a0a;
+    transition: all .2s;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-radius: 25px;
+   }
+   
+   .detcard2:hover {
+    transform: scale(0.98);
+   }
+   
+   .detcard:hover {
+    box-shadow: 0px 0px 30px 10px rgba(0, 24, 239, 0.3);
+   }
+
+   /* Media query for screens that are less than 1200px wide */
+@media (max-width: 1280px) {
+    .example-2 .icon-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .example-2 .icon-content .tooltip1 {
+        position: absolute;
+        left: -60px;  /* Adjust this distance to place text left of SVG */
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 10px;
+        white-space: nowrap; /* Prevents text from wrapping */
+    }
+
+    .example-2 .icon-content .tooltip2 {
+        position: absolute;
+        right: -60px;  /* Adjust this distance to place text right of SVG */
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 10px;
+        white-space: nowrap; /* Prevents text from wrapping */
+    }
+
+    /* Ensure tooltip texts appear properly */
+    .example-2 .icon-content .tooltip1,
+    .example-2 .icon-content .tooltip2 {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .example-2 .icon-content:hover .tooltip1,
+    .example-2 .icon-content:hover .tooltip2 {
+        opacity: 1;
+        visibility: visible;
+    }
+}
