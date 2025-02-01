@@ -38,19 +38,19 @@ const Navbar = () => {
       </div>
       <div className='min-w-[45%]'>
         <ul className='flex justify-center gap-7 items-center h-full'>
-          <li className='card' data-active={activePath === "/"}>
+          <li className='card' data-active={activePath === "https://mahesh2-3.github.io/Portfolio/"}>
             <div className='card2 cursor-pointer'>
-              <a href="/">About Me</a>
+              <a href="https://mahesh2-3.github.io/Portfolio/">About Me</a>
             </div>
           </li>
           <li className='card' data-active={activePath.includes("/myprojects")}>
             <div className='card2 cursor-pointer'>
-              <a href="/myprojects">My Projects</a>
+              <a href="https://mahesh2-3.github.io/Portfolio/myprojects">My Projects</a>
             </div>
           </li>
           <li className='card' data-active={activePath.includes("/contactme")}>
             <div className='card2 cursor-pointer'>
-              <a href="/contactme">Contact Me</a>
+              <a href="https://mahesh2-3.github.io/Portfolio/contactme">Contact Me</a>
             </div>
           </li>
         </ul>
