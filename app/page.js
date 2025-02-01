@@ -67,7 +67,7 @@ export default function Home() {
             </div>
           </div>
           <div className="text-gray-400 flex justify-center items-center text-xl h-[30vh] ">
-            Want to see my projects <a className="underline underline-offset-8 text-white px-3" href="http://localhost:3000/myprojects">Click Me!</a>
+            Want to see my projects <a className="underline underline-offset-8 text-white px-3" href="https://mahesh2-3.github.io/Portfolio/myprojects">Click Me!</a>
           </div>
         </div>
       </motion.div >
