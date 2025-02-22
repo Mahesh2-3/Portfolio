@@ -42,11 +42,11 @@ const page = () => {
            <span className='text-center w-[100%] sm:text-xl text-sm '> For My Projects Github Links Click Any Image or Click Here </span> 
            <div className='flex flex-wrap gap-5 items-center justify-center'>
               <div>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Password-Manager/">Password Manager </a> |
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Password-Manager/">Password Manager </a>
                 <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Twitter-Clone/">Twitter Clone </a>
               </div>
               <div>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Spotify-Clone/">Spotify Clone </a> |
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Spotify-Clone/">Spotify Clone </a>
                 <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/To-do-List/">To do List </a>
               </div>
               <div>
