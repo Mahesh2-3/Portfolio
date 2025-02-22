@@ -57,6 +57,7 @@ const page = () => {
           <div className="text-gray-400 flex justify-center items-center text-xl h-[20vh] w-[100%] gap-3 sm:flex-row flex-col">
            <span> "Let's Work Together! </span><span><a className="underline underline-offset-8 text-white px-3" href="https://github.com/Mahesh2-3/Portfolio/contactme">Click This</a> To Contact Me"</span>
           </div>
+          <div className='mb-5 text-center text-gray-400'>Note for Visitors: Due to Google restrictions, I'm unable to deploy my projects through GitHub. However, you can explore my code and contributions directly on my GitHub repository. 🚀</div>
         </div>
       </motion.div>
     </>
