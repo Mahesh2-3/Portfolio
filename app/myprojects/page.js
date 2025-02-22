@@ -17,24 +17,45 @@ const page = () => {
           </div>
           <div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 my-[100px] lg:flex-row flex-col">
-              <a target='__blank__' className='lg:w-[50%] w-[100%]' href="https://github.com/Mahesh2-3/Password-Manager"><img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./pass.png" alt="" /></a>
+              <a target='__blank__' className='lg:w-[50%] w-[100%]' href="https://github.com/Mahesh2-3/Password-Manager">
+<video className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " playsInline  autoPlay id="myVideo" loop>
+                  <source src="./password.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>        
+        </a>
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Password Manager</p>
             </div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px] lg:flex-row flex-col-reverse">
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Twitter Clone</p>
-              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://github.com/Mahesh2-3/Twitter-Clone"><img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./twit.png" alt="" /></a>
+              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://github.com/Mahesh2-3/Twitter-Clone">
+<video className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " playsInline  autoPlay id="myVideo" loop>
+                  <source src="twittter.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>        </a>
             </div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px] lg:flex-row flex-col">
-              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://github.com/Mahesh2-3/Spotify-Clone"><img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./spot.png" alt="" /></a>
+              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://github.com/Mahesh2-3/Spotify-Clone">
+<video className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " playsInline  autoPlay id="myVideo" loop>
+                  <source src="spotify.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>        </a>
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Spotify Clone</p>
 
             </div>
             <div className="border-b pb-[50px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px]  lg:flex-row flex-col-reverse">
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">To do List</p>
-              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://github.com/Mahesh2-3/To-do-List"><img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./todo.png" alt="" /></a>
+              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://github.com/Mahesh2-3/To-do-List">
+ <video className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " playsInline  autoPlay id="myVideo" loop>
+                  <source src="todo.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>        </a>
             </div>
           <div className="border-b pb-[50px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px]  lg:flex-row flex-col">
-              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://github.com/Mahesh2-3/Netflix-Clone"><img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./netflix.png" alt="" /></a>
+              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://github.com/Mahesh2-3/Netflix-Clone">
+<video className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " playsInline  autoPlay loop id="myVideo">
+                  <source src="netflix.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>        </a>
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Netflix-Clone</p>
             </div>
           </div>
