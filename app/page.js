@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 import React from 'react'
 
 export default function Home() {
-
+function calculateAge(birthday) {
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970
+    );
+  }
+  
   return (
     <>
       <motion.div
@@ -27,7 +33,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center">
                     <span className="font-bold text-2xl w-[200px]">Age</span>
-                    <span className="text-xl sm:text-2xl">: 17</span>
+                    <span className="text-xl sm:text-2xl">: {calculateAge(new Date(2007, 1, 3))} years</span>
                   </li>
                   <li className="flex items-center">
                     <span className="font-bold text-2xl w-[200px]">Education</span>
