@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
       <div className='min-w-[45%]'>
         <ul className='flex justify-center gap-7 items-center h-full'>
-          <li className='card' data-active={activePath === "https://mahesh2-3.github.io/Portfolio/"}>
+          <li className='card' data-active={activePath.endsWith("Portfolio/")}>
             <div className='card2 cursor-pointer'>
               <a href="https://mahesh2-3.github.io/Portfolio/">About Me</a>
             </div>
