@@ -125,10 +125,12 @@ ul {
     }
 }
 @media (max-width:640px) {
-    .example-2 .icon-content .tooltip {
+    .example-2 .icon-content {
         opacity: 1;
         visibility: visible;
-        left: -50px;
         top: 5px;
+    }
+    .tooltip {
+        display: none;
     }
 }
