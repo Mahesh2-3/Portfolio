@@ -27,7 +27,7 @@ const page = () => {
               </a>
             </div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px] lg:flex-row flex-col">
-              <a target='__blank__' className='lg:w-[50%] w-[100%]' href="https://mahesh2-3.github.io/Password-Manager/">
+              <a target='__blank__' className='lg:w-[50%] w-[100%]' href="https://github.com/Mahesh2-3/Password-Manager/">
                 {/* <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./pass.png" alt="" /> */}
                 <video className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " playsInline autoPlay id="myVideo" loop>
                   <source src="./password.mp4" type="video/mp4" />
@@ -74,14 +74,15 @@ const page = () => {
            <span className='text-center w-[100%] sm:text-xl text-sm '> For My Projects Github Links Click Any Image or Click Here </span> 
            <div className='flex flex-wrap gap-5 items-center justify-center'>
               <div>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://mahesh2-3.github.io/AOT-Game/">AOT-Game</a>
                 <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Password-Manager/">Password Manager </a>
+              </div>
+              <div>
                 <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Twitter-Clone/">Twitter Clone </a>
-              </div>
-              <div>
                 <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Spotify-Clone/">Spotify Clone </a>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/To-do-List/">To do List </a>
               </div>
               <div>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/To-do-List/">To do List </a>
                 <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://github.com/Mahesh2-3/Netflix-Clone/">Netflix Clone </a>
               </div>
             </div>
