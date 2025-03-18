@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <link rel="icon" type="image/jpeg" href="/itachieyes.jpg" />
+      <link rel="icon" type="image/svg" href="/logo.svg" />
       <body
         className= {`${geistSans.variable} ${geistMono.variable} antialiased font-sans relative`}
       >
