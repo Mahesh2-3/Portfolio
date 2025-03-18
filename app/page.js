@@ -6,12 +6,6 @@ import React from 'react'
 
 export default function Home() {
 
-  function calculateAge(birthday) {
-    var ageDifMs = Date.now() - birthday.getTime();
-    var ageDate = new Date(ageDifMs); // miliseconds from epoch
-    return Math.abs(ageDate.getUTCFullYear() - 1970
-    );
-  }
   return (
     <>
       <motion.div
@@ -20,9 +14,9 @@ export default function Home() {
         transition={{ duration: 2, ease: "easeInOut" }}
       >
         <div>
-          <div className="flex lg:flex-row lg:gap-40 gap-14 flex-col justify-center items-center h-[90vh]">
-            <div className="flex flex-col gap-6 items-center   h-[350px]">
-              <img className="hover:shadow-[0_0_40px_3px_rgba(0,24,239,0.3)] rounded-[50%] w-[350px] h-[350px] sm:scale-100 scale-[0.8]" src="./profile3.jpg" alt="" />
+          <div className="flex lg:flex-row flex-col justify-evenly items-center h-[90vh]">
+            <div className="flex flex-col gap-6 items-center xl:w-[40%] h w-[100%]-[350px]">
+              <img className="hover:shadow-[0_0_30px_3px_rgba(0,24,239,0.3)] rounded-[50%] w-[350px] h-[350px] sm:scale-100 scale-[0.8]" src="./itachi.jpg" alt="" />
               <h1 className="text-4xl hidden lg:block">MAHESH BABU</h1>
             </div>
             <div className=" scale-[0.8] min-w-[450px] sm:scale-[1]">
@@ -34,9 +28,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center">
                     <span className="font-bold text-2xl w-[200px]">Age</span>
-                    <span className="text-xl sm:text-2xl">
-                      : {calculateAge(new Date(2007, 1, 3))} years
-                    </span>
+                    <span className="text-xl sm:text-2xl">: 17</span>
                   </li>
                   <li className="flex items-center">
                     <span className="font-bold text-2xl w-[200px]">Education</span>
@@ -76,7 +68,7 @@ export default function Home() {
             </div>
           </div>
           <div className="text-gray-400 flex justify-center items-center text-xl h-[30vh] ">
-            Want to see my projects <a className="underline underline-offset-8 text-white px-3" href={`${process.env.NEXT_PUBLIC_URL}/myprojects`}>Click Me!</a>
+            Want to see my projects <a className="underline underline-offset-8 text-white px-3" href="http://localhost:3000/myprojects">Click Me!</a>
           </div>
         </div>
       </motion.div >

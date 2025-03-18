@@ -128,7 +128,7 @@ ul {
     .example-2 .icon-content {
         opacity: 1;
         visibility: visible;
-        /* left: -50px; */
+        left: -50px;
         top: 5px;
     }
     .tooltip {

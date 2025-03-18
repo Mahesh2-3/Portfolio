@@ -38,7 +38,7 @@ const page = () => {
           pauseOnHover
           theme="dark"
         />
-        <div className='h-[80vh] flex justify-center items-center'>
+        <div className='h-[80vh] flex justify-center items-center overflow-hidden'>
           <div className='sm:h-[20vh] h-[50vh] sm:w-[50vw] w-[30vw] flex items-center justify-center shadow-[0px_0px_30px_2px_gold] sm:min-w-[410px] min-w-[40vw] px-4'>
             <ul className="example-2 gap-10 sm:gap-7 lg:gap-10 flex sm:flex-row flex-col">
               <li className="icon-content">
