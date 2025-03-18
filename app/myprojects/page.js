@@ -23,7 +23,7 @@ const page = () => {
               <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://mahesh2-3.github.io/AOT-Game/">
                 {/* <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./twit.png" alt="" /> */}
                 <video className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " preload="metadata" playsInline autoPlay id="myVideo" loop>
-                  <source src="aot(1).mp4"  type="video/mp4" />
+                  <source src="./aot.mp4"  type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </a>
