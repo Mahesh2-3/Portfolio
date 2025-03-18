@@ -16,7 +16,7 @@ export default function Home() {
         <div>
           <div className="flex lg:flex-row flex-col justify-evenly items-center h-[90vh]">
             <div className="flex flex-col gap-6 items-center xl:w-[40%] h w-[100%]-[350px]">
-              <img className="hover:shadow-[0_0_30px_3px_rgba(0,24,239,0.3)] rounded-[50%] w-[350px] h-[350px] sm:scale-100 scale-[0.8]" src="./itachi.jpg" alt="" />
+              <img className="hover:shadow-[0_0_30px_3px_rgba(0,24,239,0.3)] rounded-[50%] w-[350px] h-[350px] sm:scale-100 scale-[0.8]" src="./profile3.jpg" alt="" />
               <h1 className="text-4xl hidden lg:block">MAHESH BABU</h1>
             </div>
             <div className=" scale-[0.8] min-w-[450px] sm:scale-[1]">
