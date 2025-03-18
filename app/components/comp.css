@@ -32,4 +32,13 @@
   .card[data-active="true"] .card2 {
     transform: scale(0.98);
   }
-  
+
+
+
+
+  @media (max-width:1280px) {
+    /*to remove hover effect on .card*/
+    .card:hover {
+      box-shadow: none;
+    }
+  }

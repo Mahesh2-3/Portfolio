@@ -33,12 +33,12 @@ const Navbar = () => {
   return (
     <div className='w-full flex justify-end lg:justify-between px-12 h-[10vh] sticky top-0 bg-black bg-opacity-80 z-10'>
       <div onMouseEnter={hover} onMouseLeave={left} className='items-center gap-0 lg:flex hidden'>
-        <img className='h-full' src="/logo.svg" alt="" />
-        <div className='opacity-0 imgg font-bold text-3xl relative right-5'>aheshbabu</div>
+        <div className='text-5xl font-serif font-bold'>M</div>
+        <div className='opacity-0 imgg font-bold text-3xl relative'>aheshbabu</div>
       </div>
       <div className='min-w-[45%]'>
         <ul className='flex justify-center gap-7 items-center h-full'>
-          <li className='card' data-active={activePath === "/"}>
+          <li className='card' data-active={activePath.endsWith("/")}>
             <div className='card2 cursor-pointer'>
               <a href="/">About Me</a>
             </div>

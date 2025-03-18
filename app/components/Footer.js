@@ -9,7 +9,7 @@ const Footer = () => {
       </div>
       <div className='flex text-xl font-bold h-[100%]  justify-evenly items-center '>
       <div className='hidden lg:block'>"Building ideas into reality."</div>
-      <div className='hidden sm:block'>© 2025 Mahesh. All Rights Reserved.</div>
+      <div className='hidden sm:block'>© <span>{new Date().getFullYear()}</span> Mahesh. All Rights Reserved.</div>
       <div className='hidden lg:block'>"Code, Create, Innovate."</div>
       </div>
     </div>
