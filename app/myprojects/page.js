@@ -66,16 +66,17 @@ const page = () => {
             <span className='text-center w-[100%] sm:text-xl text-sm '> For My Projects Links Click Any Image or Click Here </span>
             <div className='flex flex-wrap gap-5 items-center justify-center'>
               <div>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://mahesh2-3.github.io/Password-Manager/">Password Manager </a>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://mahesh2-3.github.io/AOT-Game/">AOT-Game </a>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://resumecraft-32.vercel.app/">ResumeCraft </a>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://password-manager32.vercel.app/">Password Manager </a>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://aot-game32.vercel.app/">AOT-Game </a>
               </div>
               <div>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://mahesh2-3.github.io/Twitter-Clone/">Twitter Clone </a>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://mahesh2-3.github.io/Spotify-Clone/">Spotify Clone </a>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://twitter-clone32.vercel.app/">Twitter Clone </a>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://spotify-clone32.vercel.app/">Spotify Clone </a>
               </div>
               <div>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://mahesh2-3.github.io/To-do-List/">To do List </a>
-                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://mahesh2-3.github.io/Netflix-Clone/">Netflix Clone </a>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://to-do-list32.vercel.app/">ITask Manager </a>
+                <a className="underline underline-offset-8 text-white px-3" target='__blank__' href="https://netflix-clone-32.vercel.app/">Netflix Clone </a>
               </div>
               <div>
               </div>
@@ -84,8 +85,7 @@ const page = () => {
           <div className="text-gray-400 flex justify-center items-center text-xl h-[20vh] w-[100%] gap-3 sm:flex-row flex-col">
             <span> "Let's Work Together! </span><span><a className="underline underline-offset-8 text-white px-3" href={`${process.env.NEXT_PUBLIC_URL}/contactme`}>Click This</a> To Contact Me"</span>
           </div>
-          <div className='mb-5 text-center text-gray-400'>Note for Visitors: Due to Google restrictions, I'm unable to deploy my projects through GitHub. However, you can explore my code and contributions directly on my GitHub repository. 🚀</div>
-        </div>
+          </div>
       </motion.div>
     </>
   )
