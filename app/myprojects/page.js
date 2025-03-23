@@ -18,26 +18,32 @@ const page = () => {
             <img className='mx-auto hidden md:flex' src="./projects.png" alt="" />
           </div>
           <div>
+         <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px] lg:flex-row flex-col">
+              <a target='__blank__' className='lg:w-[50%] w-[100%]' href="https://resumecraft-32.vercel.app/">
+                <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./passop.png" alt="" />
+              </a>
+              <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">ResumeCraft</p>
+            </div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 my-[100px] lg:flex-row flex-col-reverse">
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">AOT-Game</p>
-              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://mahesh2-3.github.io/AOT-Game/">
+              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://aot-game32.vercel.app/">
                 <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./aot.jpg" alt="" />
               </a>
             </div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px] lg:flex-row flex-col">
-              <a target='__blank__' className='lg:w-[50%] w-[100%]' href="https://mahesh2-3.github.io/Password-Manager/">
+              <a target='__blank__' className='lg:w-[50%] w-[100%]' href="https://password-manager32.vercel.app/">
                 <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./passop.png" alt="" />
               </a>
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Password Manager</p>
             </div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px] lg:flex-row flex-col-reverse">
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Twitter Clone</p>
-              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://mahesh2-3.github.io/Twitter-Clone/">
+              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://twitter-clone32.vercel.app/">
                 <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./twitter.png" alt="" />
               </a>
             </div>
             <div className="border-b pb-[100px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px] lg:flex-row flex-col">
-              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://mahesh2-3.github.io/Spotify-Clone/">
+              <a target='__blank__' className='lg:w-[50%] w-[100%] ' href="https://spotify-clone32.vercel.app/">
                 <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./spotify.png" alt="" />
               </a>
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Spotify Clone</p>
@@ -45,12 +51,12 @@ const page = () => {
             </div>
             <div className="border-b pb-[50px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px]  lg:flex-row flex-col-reverse">
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">To do List</p>
-              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://mahesh2-3.github.io/To-do-List/">
+              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://to-do-list32.vercel.app/">
                 <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./itask.png" alt="" />
               </a>
             </div>
             <div className="border-b pb-[50px] w-[80%] mx-auto flex justify-evenly items-center gap-7 mb-[100px]  lg:flex-row flex-col">
-              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://mahesh2-3.github.io/Netflix-Clone/">
+              <a target='__blank__' className='lg:w-[50%] w-[100%]] ' href="https://netflix-clone-32.vercel.app/">
                 <img className="shadow-[0px_0px_17px_2px_rgba(255,255,255,0.8)] w-[100%] cursor-pointer " src="./netflix.png" alt="" />
               </a>
               <p className="leading-10 text-3xl text-[#FFD700] drop-shadow-[0px_0px_40px_rgba(255,255,255,1)] font-bold m-auto">Netflix-Clone</p>
