@@ -1,5 +1,5 @@
 const config = {
-  content: ["./src/**/*.{js,jsx}"],
+  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   mode: "jit",
   theme: {
     extend: {
@@ -22,7 +22,7 @@ const config = {
       },
     },
   },
-  plugins: ["@tailwindcss/postcss"],
+  plugins: [], // ✅ Fixed: Removed invalid plugin
 };
 
 export default config;
