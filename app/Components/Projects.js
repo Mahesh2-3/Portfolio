@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Tilt } from "react-tilt";
+import  Tilt from "react-parallax-tilt"
 import { Projects } from "../constants"; // import your array
 import { FaGithub } from "react-icons/fa";
 import { textVariant, fadeIn } from "../utils/motion";
