@@ -44,7 +44,7 @@ const Navbar = () => {
           }}
         >
           <Image width={36}
-            height={36} src="/logo.png" alt='logo' className='w-9 h-9 rounded-full object-contain' />
+            height={36} src="/Logo.png" alt='logo' className='w-9 h-9 rounded-full object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Mahesh
           </p>
