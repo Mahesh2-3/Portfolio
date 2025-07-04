@@ -1,5 +1,5 @@
 "use client"
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { labels } from '../constants';
 import Image from 'next/image';
 
@@ -12,16 +12,16 @@ const CircularMenu = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   useEffect(() => {
-  const handleResize = () => {
-    const w = window.innerWidth;
-    setradius(w < 640 ? 175 : w < 768 ? 225 : 275);
-  };
+    const handleResize = () => {
+      const w = window.innerWidth;
+      setradius(w < 640 ? 175 : w < 768 ? 225 : 275);
+    };
 
-  window.addEventListener("resize", handleResize);
-  handleResize(); // initial set
+    window.addEventListener("resize", handleResize);
+    handleResize(); // initial set
 
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
 
   return (
@@ -55,6 +55,8 @@ const CircularMenu = () => {
         <Image
           src="/profile3.jpg"
           alt="Profile"
+          width={350}
+          height={350}
           className="md:w-[350px] sm:w-[300px] w-[200px] md:h-[350px] sm:h-[300px] h-[200px] rounded-full object-cover cursor-pointer z-10 border-4 border-white shadow-lg"
           onClick={toggleMenu}
         />

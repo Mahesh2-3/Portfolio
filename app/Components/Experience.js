@@ -10,7 +10,7 @@ import ScrollRevealer from "./Animations/ScrollReveal";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
 import Image from "next/image";
 
 
@@ -19,8 +19,8 @@ const Experience = () => {
         <ScrollRevealer>
             <div id="experience" className="py-10 px-4 w-full mx-auto">
                 <motion.div
-                className="my-20"
-                variants={textVariant()}>
+                    className="my-20"
+                    variants={textVariant()}>
                     <p className={`${styles.sectionSubText} text-center secondtext`}>
                         What I have done so far
                     </p>
@@ -34,7 +34,8 @@ const Experience = () => {
                             date={exp.duration}
                             className="bg-transparent"
                             iconStyle={{ background: "#1e293b", color: "#fff" }}
-                            icon={<Image src={exp.icon} alt="company" className="w-full h-full rounded-full" />}
+                            icon={<Image src={exp.icon} width={60}
+                                height={60} alt="company" className="w-full h-full rounded-full" />}
                             contentStyle={{
                                 background: "#151030",
                                 color: "#ffffff",
@@ -59,4 +60,4 @@ const Experience = () => {
     );
 };
 
-export default SectionWrapper(Experience,"work");
+export default SectionWrapper(Experience, "work");
