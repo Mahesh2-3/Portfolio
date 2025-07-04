@@ -8,6 +8,7 @@ import { textVariant, fadeIn } from "../utils/motion";
 import { motion } from "framer-motion"
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
+import Image from "next/image";
 
 const ProjectCard = ({
   index,
@@ -28,7 +29,7 @@ const ProjectCard = ({
         className='bg-[#151030] p-5 rounded-2xl sm:w-[360px] w-full'
       >
         <div className='relative w-full h-[230px]'>
-          <img
+          <Image
             src={image}
             alt='project_image'
             className='w-full h-full object-cover rounded-2xl'

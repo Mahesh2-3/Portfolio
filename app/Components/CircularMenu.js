@@ -1,6 +1,7 @@
 "use client"
 import React, { useState,useEffect } from 'react';
 import { labels } from '../constants';
+import Image from 'next/image';
 
 
 const CircularMenu = () => {
@@ -51,9 +52,9 @@ const CircularMenu = () => {
         )}
 
         {/* Center Image */}
-        <img
+        <Image
           src="/profile3.jpg"
-          alt="Center"
+          alt="Profile"
           className="md:w-[350px] sm:w-[300px] w-[200px] md:h-[350px] sm:h-[300px] h-[200px] rounded-full object-cover cursor-pointer z-10 border-4 border-white shadow-lg"
           onClick={toggleMenu}
         />

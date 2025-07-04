@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const Navbar = () => {
@@ -42,7 +43,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src="/logo.png" alt='logo' className='w-9 h-9 rounded-full object-contain' />
+          <Image src="/logo.png" alt='logo' className='w-9 h-9 rounded-full object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Mahesh
           </p>

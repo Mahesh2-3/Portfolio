@@ -11,6 +11,7 @@ import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import {motion} from "framer-motion"
+import Image from "next/image";
 
 
 const Experience = () => {
@@ -33,7 +34,7 @@ const Experience = () => {
                             date={exp.duration}
                             className="bg-transparent"
                             iconStyle={{ background: "#1e293b", color: "#fff" }}
-                            icon={<img src={exp.icon} alt="company" className="w-full h-full rounded-full" />}
+                            icon={<Image src={exp.icon} alt="company" className="w-full h-full rounded-full" />}
                             contentStyle={{
                                 background: "#151030",
                                 color: "#ffffff",
