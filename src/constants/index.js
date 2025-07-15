@@ -1,27 +1,15 @@
 import {
-  mobile,
   backend,
-  creator,
   web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
   git,
   figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
 } from "../assets";
 
@@ -45,18 +33,18 @@ const services = [
     title: "Web Developer",
     icon: web,
   },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
+  // {
+  //   title: "React Native Developer",
+  //   icon: mobile,
+  // },
   {
     title: "Backend Developer",
     icon: backend,
   },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
+  // {
+  //   title: "Content Creator",
+  //   icon: creator,
+  // },
 ];
 
 const technologies = [
@@ -72,17 +60,17 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
+  // {
+  //   name: "TypeScript",
+  //   icon: typescript,
+  // },
   {
     name: "React JS",
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "ExpressJs",
+    icon: "/expressjs.jpg",
   },
   {
     name: "Tailwind CSS",
@@ -108,65 +96,68 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  // {
+  //   name: "docker",
+  //   icon: docker,
+  // },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Full stack web Developer",
+    company_name:  "Zidio Development",
+    icon: "/Zidio.jpg",
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "May 2025 - July 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+      "Built an Excel-driven analytical platform using the MERN stack.",
+      "Developed full-stack features with React, Node.js, and MongoDB.",
+      "Integrated dynamic Excel handling and data visualization tools.",
+      "Collaborated with stakeholders to align features with data needs.",
+      "Debugged and optimized frontend and backend codebases.",
+    ]
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Frontend web Developer",
+    company_name: "Digital Guruji",
+    icon: "/dg.jpg",
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "May 2025 - Oct 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+      "Created 10+ frontend coding tools using HTML, CSS, and JavaScript.",
+      "Built interactive UIs for improved developer experience.",
+      "Ensured responsive and accessible design across devices.",
+      "Added real-time previews and copy/download features.",
+      "Improved tools iteratively based on user testing.",
+      "Handled entire frontend architecture and code quality."
+    ]
   },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+  // {
+  //   title: "Web Developer",
+  //   company_name: "Shopify",
+  //   icon: shopify,
+  //   iconBg: "#383E56",
+  //   date: "Jan 2022 - Jan 2023",
+  //   points: [
+  //     "Developing and maintaining web applications using React.js and other related technologies.",
+  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+  //     "Implementing responsive design and ensuring cross-browser compatibility.",
+  //     "Participating in code reviews and providing constructive feedback to other developers.",
+  //   ],
+  // },
+  // {
+  //   title: "Full stack Developer",
+  //   company_name: "Meta",
+  //   icon: meta,
+  //   iconBg: "#E6DEDD",
+  //   date: "Jan 2023 - Present",
+  //   points: [
+  //     "Developing and maintaining web applications using React.js and other related technologies.",
+  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+  //     "Implementing responsive design and ensuring cross-browser compatibility.",
+  //     "Participating in code reviews and providing constructive feedback to other developers.",
+  //   ],
+  // },
 ];
 
 const testimonials = [
@@ -198,9 +189,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Todo 2.0",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "This is the latest Model of todo. Where you can set daily taasks, scheduled Tasks, and also you can write your dairy.This is a secured platform with Login system, you can also report a problem",
     tags: [
       {
         name: "react",
@@ -215,49 +206,49 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: "/todo.png",
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "AOT Game",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "An Advanced Javascript based fan game inspired by Attack on Titan Anime, Where you can shoot the enemies with a Cannon Ball When the enemy reaches our border the game is over.",
     tags: [
       {
-        name: "react",
+        name: "JavaScript",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "CSS",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "HTML",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: "/aot.jpg",
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Netflix Clone",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "This is a frontend based clone of Netflix, I also done twitter and spotify clones as a frontend Developer. These are designed at my initial state of learninng.These mainly desinged to show case my ui and frontend skills",
     tags: [
       {
-        name: "nextjs",
+        name: "HTML",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "CSS",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "JavaScript",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: "/netflix.png",
     source_code_link: "https://github.com/",
   },
 ];
