@@ -60,8 +60,20 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-full px-15 h-full flex flex-col sm:items-start items-center">
-      <h1 className="heading my-20 mb-10 fade-in">My Work</h1>
+    <div className="w-full sm:px-15 px-7 h-full flex flex-col sm:items-start items-center">
+      <span className="text-lg text-primary w-full text-start fade-in font-normal mt-20">
+        My Work
+      </span>
+      <h1 className="heading fade-in font-extrabold w-full text-start mb-3">
+        Projects
+      </h1>
+      <p className="text-primary fade-in mb-10 sm:w-[60%] w-full">
+        Following projects showcases my skills and experience through real-world
+        examples of my work. Each project is briefly described with links to
+        code repositories and live demos in it. It reflects my ability to solve
+        complex problems, work with different technologies, and manage projects
+        effectively.
+      </p>
       <div className="grow-1 flex sm:justify-start  justify-center flex-wrap gap-10 ">
         {projects.map((project, index) => (
           <ProjectCard

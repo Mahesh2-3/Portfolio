@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import StarfieldBackground from "./Animations/Stars";
 import { MdOutlineRocket, MdOutlineRocketLaunch } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const ContactMe = () => {
   const rocketRef = useRef(null);
   const [isLaunched, setIsLaunched] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // ✅ react-hook-form
   const {
@@ -16,26 +18,74 @@ const ContactMe = () => {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (form) => {
+    setLoading(true); // start loading
+
+    emailjs
+      .send(
+        import.meta.env.VITE_SERVICEID,
+        import.meta.env.VITE_TEMPLATE1,
+        {
+          from_name: form.name,
+          to_name: "Mahesh",
+          from_email: form.email,
+          to_email: "maheshkarna32@gmail.com",
+          message: form.message,
+        },
+        import.meta.env.VITE_PUBLICKEY
+      )
+      .then(
+        () => {
+          alert("✅ Thank you! I’ll get back to you as soon as possible.");
+
+          // Send confirmation email back to user
+          emailjs.send(
+            import.meta.env.VITE_SERVICEID,
+            import.meta.env.VITE_TEMPLATE2,
+            {
+              from_name: "Mahesh",
+              to_name: form.name,
+              to_email: form.email,
+              from_email: "maheshkarna32@gmail.com",
+            },
+            import.meta.env.VITE_PUBLICKEY
+          );
+
+          reset();
+        },
+        (error) => {
+          console.error(error);
+          alert("❌ Something went wrong. Please try again.");
+        }
+      )
+      .finally(() => {
+        setLoading(false); // stop loading
+      });
+
     setIsLaunched(true);
 
-    rocketRef.current.classList.add("rocket-launch");
-
-    console.log("Form submitted ✅", data);
+    if (rocketRef.current) {
+      rocketRef.current.classList.add("rocket-launch");
+    }
 
     setTimeout(() => {
-      rocketRef.current.classList.remove("rocket-launch");
+      if (rocketRef.current) {
+        rocketRef.current.classList.remove("rocket-launch");
+      }
       setIsLaunched(false);
-      reset();
     }, 5000);
   };
 
   const handleHover = () => {
-    if (!isLaunched) rocketRef.current.classList.add("rocket-tilt");
+    if (!isLaunched && rocketRef.current) {
+      rocketRef.current.classList.add("rocket-tilt");
+    }
   };
 
   const handleLeave = () => {
-    if (!isLaunched) rocketRef.current.classList.remove("rocket-tilt");
+    if (!isLaunched && rocketRef.current) {
+      rocketRef.current.classList.remove("rocket-tilt");
+    }
   };
 
   const doubleGradient =
@@ -52,6 +102,7 @@ const ContactMe = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col fade-in relative top-20 font-normal justify-evenly gap-4 p-6 bg-white/5 border border-white/20 rounded-2xl sm:max-w-[600px] w-full mx-auto h-[500px] backdrop-blur-sm"
         >
+          <span className="text-4xl text-white font-extrabold">Contact Me</span>
           {/* Name */}
           <div className="flex flex-col gap-1">
             <input
@@ -107,7 +158,10 @@ const ContactMe = () => {
             type="submit"
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
-            className="flex items-center overflow-hidden justify-center gap-2 font-semibold text-white p-2 h-[50px] cursor-pointer transition-all ease-in-out duration-300 rounded-md"
+            disabled={loading} // ✅ disabled while loading
+            className={`flex items-center overflow-hidden justify-center gap-2 font-semibold text-white p-2 h-[50px] cursor-pointer transition-all ease-in-out duration-300 rounded-md ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
             style={{
               backgroundImage: doubleGradient,
               backgroundSize: "200% 100%",
@@ -117,7 +171,7 @@ const ContactMe = () => {
               willChange: "background-position",
             }}
           >
-            <span>Send Message</span>
+            <span>{loading ? "Sending..." : "Send Message"}</span>
 
             <FaCheck
               size={20}
@@ -133,6 +187,7 @@ const ContactMe = () => {
               id="rocket"
               className="relative translate-x-[-30px]"
               ref={rocketRef}
+              aria-hidden="true"
             >
               {isLaunched ? (
                 <MdOutlineRocketLaunch size={20} />

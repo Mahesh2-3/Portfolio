@@ -102,63 +102,63 @@ export default function App() {
   }, []);
 
   // GSAP model animation
-  useEffect(() => {
-    if (!modelRef.current) return;
+  // useEffect(() => {
+  //   if (!modelRef.current) return;
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: mainref.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-          onUpdate: (self) => setprogress(self.progress.toFixed(2)),
-        },
-      })
-      .to(modelRef.current, {
-        x: `${windowsWidth / 4}px`,
-        y: `${sectionHeights.about}px`,
-        ease: "none",
-      })
-      .to(modelRef.current, {
-        x: `-${windowsWidth / 4}px`,
-        y: `${sectionHeights.skills + sectionHeights.about}px`,
-        ease: "none",
-      })
-      .to(modelRef.current, {
-        x: `${windowsWidth / 4}px`,
-        y: `${
-          sectionHeights.projects + sectionHeights.about + sectionHeights.skills
-        }px`,
-        ease: "none",
-      })
-      .to(modelRef.current, {
-        x: `${windowsWidth / 4}px`,
-        y: `${
-          sectionHeights.experience +
-          sectionHeights.about +
-          sectionHeights.skills +
-          sectionHeights.projects
-        }px`,
-        ease: "none",
-      })
-      .to(modelRef.current, {
-        x: "0vw",
-        y: `${
-          sectionHeights.experience +
-          sectionHeights.about +
-          sectionHeights.skills +
-          sectionHeights.projects +
-          sectionHeights.contact
-        }px`,
-        ease: "none",
-      });
-  }, [sectionHeights, windowsWidth]);
+  //   gsap
+  //     .timeline({
+  //       scrollTrigger: {
+  //         trigger: mainref.current,
+  //         start: "top top",
+  //         end: "bottom bottom",
+  //         scrub: 1,
+  //         onUpdate: (self) => setprogress(self.progress.toFixed(2)),
+  //       },
+  //     })
+  //     .to(modelRef.current, {
+  //       x: `${windowsWidth / 4}px`,
+  //       y: `${sectionHeights.about}px`,
+  //       ease: "none",
+  //     })
+  //     .to(modelRef.current, {
+  //       x: `-${windowsWidth / 4}px`,
+  //       y: `${sectionHeights.skills + sectionHeights.about}px`,
+  //       ease: "none",
+  //     })
+  //     .to(modelRef.current, {
+  //       x: `${windowsWidth / 4}px`,
+  //       y: `${
+  //         sectionHeights.projects + sectionHeights.about + sectionHeights.skills
+  //       }px`,
+  //       ease: "none",
+  //     })
+  //     .to(modelRef.current, {
+  //       x: `${windowsWidth / 4}px`,
+  //       y: `${
+  //         sectionHeights.experience +
+  //         sectionHeights.about +
+  //         sectionHeights.skills +
+  //         sectionHeights.projects
+  //       }px`,
+  //       ease: "none",
+  //     })
+  //     .to(modelRef.current, {
+  //       x: "0vw",
+  //       y: `${
+  //         sectionHeights.experience +
+  //         sectionHeights.about +
+  //         sectionHeights.skills +
+  //         sectionHeights.projects +
+  //         sectionHeights.contact
+  //       }px`,
+  //       ease: "none",
+  //     });
+  // }, [sectionHeights, windowsWidth]);
 
   return (
     <div
       ref={mainref}
-      className="lg:w-[80%] mx-auto w-full relative z-0 h-fit overflow-x-hidden bg-black"
+      className="lg:w-[70%] mx-auto w-full relative z-0 h-fit overflow-x-hidden bg-black"
     >
       <div
         style={{
@@ -186,16 +186,16 @@ export default function App() {
         ref={homeRef}
         id="home"
         style={{ margin: "0 auto" }}
-        className=" relative h-[100vh] z-[5] pb-20 flex flex-col items-center"
+        className=" relative h-[100vh] z-[5] pb-20 flex flex-col items-center justify-center"
       >
         <div
           id="Name"
           style={{ transform: "translateY(350px)" }}
-          className="font-bold font-primary absolute z-10 md:text-9xl text-7xl text-[#fff] transition-all tracking-wider ease-in-out select-none duration-700 blink-cursor"
+          className="font-bold font-primary absolute top-0 z-10 md:text-9xl text-7xl text-[#fff] transition-all tracking-wider ease-in-out select-none duration-700 blink-cursor"
         ></div>
         <div
           style={{ transitionDelay: "1000ms" }}
-          className={`opacity-0 transition-all duration-700 text-primary absolute tracking-[0.2em] sm:text-2xl text-lg z-10 ${
+          className={`opacity-0 transition-all duration-700 top-0 text-primary absolute tracking-[0.2em] sm:text-2xl text-lg z-10 ${
             showNav
               ? "opacity-100 sm:translate-y-[180px] translate-y-[140px]"
               : "sm:translate-y-[240px] translate-y-[200px]"
@@ -227,14 +227,22 @@ export default function App() {
             </li>
           ))}
         </ul>
-        <div
+
+        <div className="flex justify-center items-center relative top-10 ">
+          <img
+            src="/profile.png"
+            className="profile w-[350px] h-[350px]"
+            alt="profile"
+          />
+        </div>
+        {/* <div
           ref={modelRef}
           className="w-[100vw] h-[100vh] transition-all ease-in-out z-[1] relative "
         >
           <Canvas style={{ background: "transparent" }} gl={{ alpha: true }}>
             <Character progress={progress} />
           </Canvas>
-        </div>
+        </div> */}
       </div>
 
       <section
@@ -261,7 +269,7 @@ export default function App() {
       <section
         ref={experienceRef}
         id="experience"
-        className="min-h-[100vh] relative z-[5]"
+        className="min-h-[75vh] relative z-[5]"
       >
         <Experience />
       </section>

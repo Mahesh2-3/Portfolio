@@ -7,16 +7,18 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="w-full h-full min-h-screen flex flex-col sm:items-end items-center justify-evenly pb-10"
+      className="w-full h-full min-h-screen flex flex-col items-center justify-evenly pb-10"
     >
-      <h1 className="fade-in pr-10 w-full text-end heading">Skills</h1>
+      <h1 className="fade-in pl-10 w-full sm:text-start text-center heading">
+        Skills
+      </h1>
       <div className="w-fit flex items-center p-10 rounded-2xl">
         <div className="grid grid-cols-2 sm:grid-cols-4 sm:gap-12 gap-8">
           {TECH.map((tech) => (
             <div
               key={tech.name}
               title={tech.name}
-              className="fade-in  tech-icon group relative flex flex-col cursor-pointer sm:backdrop-blur-lg backdrop-blur-0 items-center justify-center rounded-xl"
+              className="fade-in gap-2 tech-icon group relative flex flex-col cursor-pointer sm:backdrop-blur-lg backdrop-blur-0 items-center justify-center rounded-xl"
             >
               {/* Glow element (behind the card) */}
               <div
@@ -35,6 +37,7 @@ const Skills = () => {
                   className="sm:w-16 w-12 sm:h-16 h-12"
                 />
               </div>
+              <span>{tech.name}</span>
             </div>
           ))}
         </div>

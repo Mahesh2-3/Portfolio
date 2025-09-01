@@ -51,15 +51,15 @@ const About = () => {
       <div className="mb-20">
         <h1 className="heading fade-in">About Me</h1>
         <div className="fade-in mt-10 tracking-wide sm:w-[60%] w-full text-primary">
-          HI there, I'm <span className="font-bold text-white">MAHESH</span>, I
-          am a Full Stack Web Developer passionate about creating modern and
-          impactful digital experiences. I love transforming ideas into
-          interactive solutions that blend creativity with functionality. Always
-          curious and learning, I aim to build projects that make a real
-          difference.
+          HI there, I'm <span className="font-bold text-white">MAHESH</span>,
+          I'm a skilled software developer with experience in JavaScript, and
+          expertise in frameworks like React, Node.js, and Three.js. I'm a quick
+          learner and collaborate closely with clients to create efficient,
+          scalable, and user-friendly solutions that solve real-world problems.
+          Let's work together to bring your ideas to life!
         </div>
       </div>
-      <div className="flex flex-wrap gap-6 ">
+      <div className="flex flex-wrap gap-6 sm:items-start items-center">
         <GlowingCard word={"FRONTEND DEVELOPER"} src={"/frontend.png"} />
         <GlowingCard word={"BACKEND DEVELOPER"} src={"/backend.png"} />
       </div>

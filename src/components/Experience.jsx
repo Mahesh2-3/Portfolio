@@ -31,7 +31,10 @@ const Experience = () => {
   useFadeInAnimation();
   return (
     <div className="w-full h-full mt-30 sm:px-10 px-5 flex flex-col sm:items-start items-center">
-      <h1 className="heading fade-in mb-20 fade-in">Experience</h1>
+      <h1 className="heading fade-in fade-in">Experience</h1>
+      <span className="font-normal fade-in text-primary mb-20 text-xl">
+        What i have done so far
+      </span>
       <div className="flex flex-col gap-10">
         {Experiences.map((exp, index) => (
           <ExperienceItem key={index} experience={exp} index={index} />
