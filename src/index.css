@@ -65,7 +65,8 @@ html {
 
 .profile {
     mask-image: url(/ink.gif);
-    border: 4px solid gray;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
     border-radius: 50%;
 }
 
