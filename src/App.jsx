@@ -17,6 +17,7 @@ export default function App() {
   const mainref = useRef(null);
   const modelRef = useRef(null); // ref for 3D model
   const timeouts = useRef([]);
+  const [show, setShow] = useState(false);
 
   // refs for sections
   const homeRef = useRef(null);
@@ -155,6 +156,11 @@ export default function App() {
   //     });
   // }, [sectionHeights, windowsWidth]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), 1500); // 1s delay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       ref={mainref}
@@ -228,13 +234,15 @@ export default function App() {
           ))}
         </ul>
 
-        <div className="flex justify-center items-center relative top-10 ">
-          <img
-            src="/profile.png"
-            className="profile w-[350px] h-[350px]"
-            alt="profile"
-          />
-        </div>
+        {show && (
+          <div className="flex justify-center items-center relative top-10 ">
+            <img
+              src="/profile.png"
+              className="profile w-[350px] h-[350px]"
+              alt="profile"
+            />
+          </div>
+        )}
         {/* <div
           ref={modelRef}
           className="w-[100vw] h-[100vh] transition-all ease-in-out z-[1] relative "
@@ -283,3 +291,4 @@ export default function App() {
     </div>
   );
 }
+
