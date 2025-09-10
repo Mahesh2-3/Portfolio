@@ -63,8 +63,12 @@ html {
     overflow-x: hidden;
 }
 
-.profile {
+.profile img {
     mask-image: url(/ink.gif);
+    border-radius: 50%;
+}
+
+.profile {
     border-bottom: 4px solid white;
     border-right: 4px solid white;
     border-radius: 50%;

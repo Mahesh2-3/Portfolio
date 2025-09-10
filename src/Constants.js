@@ -1,3 +1,5 @@
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+
 export const TECH = [
   { name: "CSS", color: "#264de4", src: "/tech/css.png" },
   { name: "HTML", color: "#e34c26", src: "/tech/html.png" },
@@ -20,6 +22,22 @@ export const navLinks = [
   { name: "EXPERIENCE", src: "#experience" },
   { name: "GET IN TOUCH", src: "#get-in-touch" },
 ];
+
+export const SocialLinks = [
+  {
+    name: "LinkedIn",
+    src: "https://www.linkedin.com/in/karna-mahesh-babu",
+    icon: FaLinkedinIn,
+    color: "#0A66C2",
+  },
+  {
+    name: "Github",
+    src: "https://github.com/Mahesh2-3",
+    icon: FaGithub,
+    color: "#fff",
+  },
+];
+
 export const projects = [
   {
     title: "Bloggin'",
