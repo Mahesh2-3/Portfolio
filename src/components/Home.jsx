@@ -68,7 +68,7 @@ const Home = () => {
           className="font-bold font-primary  z-10 md:text-9xl text-7xl text-[#fff] transition-all tracking-wider ease-in-out select-none duration-700 blink-cursor"
         ></div>
         <div
-          style={{ transitionDelay: "500ms" }}
+          style={{ transitionDelay: "0ms" }}
           className={`opacity-0 transition-all duration-700 text-primary  tracking-[0.2em] sm:text-2xl text-lg z-10 ${
             showNav ? "opacity-100" : ""
           }`}
@@ -83,7 +83,7 @@ const Home = () => {
         } transition-opacity duration-300 ease-in-out flex-col px-5 relative top-7 lg:items-end items-start justify-center gap-4`}
       >
         <a href="/resume.pdf" download="MaheshResume.pdf">
-          <button className="flex gap-2 font-normal font-semibold tracking-widest items-center justify-center bg-violet-800 sm:py-3 py-2 cursor-pointer hover:shadow-[1px_2px_0px_3px_#320875] sm:px-6 px-4 hover:-translate-y-1 text-white transition-all duration-300">
+          <button className="flex gap-2 font-normal font-semibold tracking-widest items-center rounded-md justify-center bg-violet-800 sm:py-3 py-2 cursor-pointer hover:shadow-[1px_2px_0px_3px_#cfcfcf] sm:px-6 px-4 hover:-translate-y-1 text-white transition-all duration-300">
             Resume <FaDownload />{" "}
           </button>
         </a>

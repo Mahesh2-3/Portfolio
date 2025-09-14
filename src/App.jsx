@@ -37,7 +37,7 @@ export default function App() {
   return (
     <div
       ref={mainref}
-      className="lg:w-[70%] mx-auto w-full relative z-0 h-fit overflow-x-hidden bg-black"
+      className="xl:w-[70%] mx-auto hide-scrollbar w-full relative overflow-y-auto z-0 h-fit overflow-x-hidden bg-black"
     >
       <div
         style={{
@@ -117,4 +117,3 @@ export default function App() {
     </div>
   );
 }
-

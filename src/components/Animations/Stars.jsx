@@ -71,7 +71,12 @@ function StarsInner({
 export default function StarfieldBackground() {
   return (
     <Canvas
-      style={{ width: "100%", height: "100%", border: "1px white" }}
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        border: "1px white",
+      }}
       camera={{ position: [0, 0, 1], fov: 75 }}
     >
       <StarsInner />

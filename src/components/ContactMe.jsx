@@ -92,10 +92,10 @@ const ContactMe = () => {
     "linear-gradient(90deg, #04c91b 0%, #04c91b 50%, #9333ea 50%, #db2777 100%)";
 
   return (
-    <div className="relative w-full h-[100vh]">
+    <div className="relative w-full min-h-[1000px] pb-20">
       <StarfieldBackground />
-      <div className="absolute inset-0 p-3">
-        <h1 className="heading mb-20 mt-15 fade-in z-[10] relative sm:pl-10 pl-5">
+      <div className="p-3">
+        <h1 className="heading mb-10 mt-15 fade-in z-[10] relative sm:pl-10 pl-5">
           Get In Touch
         </h1>
         <form
