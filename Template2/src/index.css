@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #D7D7D7;
+  --color-light: #909090;
+  --color-secondary: #1d1d1d;
+  --font-openSans: "Open Sans";
+  --font-primary: "Montserrat";
+  --font-secondary: "Raleway";
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+}

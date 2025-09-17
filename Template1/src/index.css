@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Preahvihear&family=Ruthie&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #11071f;
+  --color-primary: #7127BA;
+  --color-secondary: #1A0B2E;
+  --color-light: #a5a5a5;
+  --font-heading: "Preahvihear";
+  --font-popp: "Poppins";
+  --font-logo: "Ruthie";
+}
+
+.gradient {
+  background: linear-gradient(to right,
+      rgba(48, 16, 128, 0.6) 0%,
+      rgba(120, 64, 173, 0.36) 100%);
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes levitate {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.levitate {
+  animation: levitate 5s ease-in-out infinite;
+}
+
+
+
+
+.hide-scrollbar {
+  overflow: auto;
+  /* scrolling still works */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+body {
+  background-color: #11071f;
+}
