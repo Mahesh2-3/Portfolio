@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #11071f;
+  --color-primary: #7127BA;
+  --color-secondary: #1A0B2E;
+  --color-light: #a5a5a5;
+  --font-heading: "Preahvihear";
+  --font-popp: "Poppins";
+  --font-logo: "Ruthie";
+}
+
+.gradient {
+  background: linear-gradient(to right,
+      rgba(48, 16, 128, 0.6) 0%,
+      rgba(120, 64, 173, 0.36) 100%);
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes levitate {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.levitate {
+  animation: levitate 5s ease-in-out infinite;
+}
+
+
+
+
+.hide-scrollbar {
+  overflow: auto;
+  /* scrolling still works */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+body {
+  background-color: #11071f;
+}
