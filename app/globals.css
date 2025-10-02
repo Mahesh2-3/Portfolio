@@ -5,7 +5,7 @@
 
 @theme {
   --font-primary: "Lilita One", 'Helvetica Neue', sans-serif !important;
-  --font-secondary: "Alumni Sans Pinstripe", sans-serif !important;
+  --font-alumni: "Alumni Sans Pinstripe", sans-serif !important;
   --font-normal: "Inter", sans-serif !important;
   --color-primary: #9c9c9c;
   --color-secondary: #c7c5c5;
@@ -25,6 +25,13 @@
 body {
   background-color: var(--color-violet9);
   color: white;
+
+}
+
+.portfolio {
+  background-image: linear-gradient(to bottom, var(--color-violet9), var(--color-violet3), var(--color-violet9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
 
@@ -80,7 +87,7 @@ body {
 }
 
 .heading {
-  @apply text-6xl font-secondary font-bold;
+  @apply text-6xl font-alumni font-bold;
 }
 
 .glass-bg {

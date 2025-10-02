@@ -24,8 +24,8 @@ const ContactMe = () => {
 
     emailjs
       .send(
-        import.meta.env.VITE_SERVICEID,
-        import.meta.env.VITE_TEMPLATE1,
+        process.env.NEXT_PUBLIC_SERVICEID,
+        process.env.NEXT_PUBLIC_TEMPLATE1,
         {
           from_name: form.name,
           to_name: "Mahesh",
@@ -33,48 +33,52 @@ const ContactMe = () => {
           to_email: "maheshkarna32@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_PUBLICKEY
+        process.env.NEXT_PUBLIC_PUBLICKEY
       )
       .then(
         () => {
+          // ✅ success
           alert("✅ Thank you! I’ll get back to you as soon as possible.");
 
-          // Send confirmation email back to user
+          // Confirmation email
           emailjs.send(
-            import.meta.env.VITE_SERVICEID,
-            import.meta.env.VITE_TEMPLATE2,
+            process.env.NEXT_PUBLIC_SERVICEID,
+            process.env.NEXT_PUBLIC_TEMPLATE2,
             {
               from_name: "Mahesh",
               to_name: form.name,
               to_email: form.email,
               from_email: "maheshkarna32@gmail.com",
             },
-            import.meta.env.VITE_PUBLICKEY
+            process.env.NEXT_PUBLIC_PUBLICKEY
           );
 
           reset();
+
+          // 🚀 Animate + show "Sent"
+          setIsLaunched(true);
+          if (rocketRef.current) {
+            rocketRef.current.classList.add("rocket-launch");
+          }
+
+          setTimeout(() => {
+            if (rocketRef.current) {
+              rocketRef.current.classList.remove("rocket-launch");
+            }
+            setIsLaunched(false);
+          }, 4000);
         },
         (error) => {
+          // ❌ error case
           console.error(error);
           alert("❌ Something went wrong. Please try again.");
+          setLoading(false); // stop loading immediately on error
         }
       )
       .finally(() => {
-        setLoading(false); // stop loading
+        // ✅ stop loading (only if it wasn’t already stopped on error)
+        setLoading(false);
       });
-
-    setIsLaunched(true);
-
-    if (rocketRef.current) {
-      rocketRef.current.classList.add("rocket-launch");
-    }
-
-    setTimeout(() => {
-      if (rocketRef.current) {
-        rocketRef.current.classList.remove("rocket-launch");
-      }
-      setIsLaunched(false);
-    }, 5000);
   };
 
   const handleHover = () => {
@@ -159,7 +163,7 @@ const ContactMe = () => {
             type="submit"
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
-            disabled={loading} // ✅ disabled while loading
+            disabled={loading}
             className={`flex items-center overflow-hidden justify-center gap-2 font-semibold text-white p-2 h-[50px] cursor-pointer transition-all ease-in-out duration-300 rounded-md ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
@@ -172,7 +176,9 @@ const ContactMe = () => {
               willChange: "background-position",
             }}
           >
-            <span>{loading ? "Sending..." : "Send Message"}</span>
+            <span>
+              {loading ? "Sending..." : isLaunched ? "Sent ✅" : "Send Message"}
+            </span>
 
             <FaCheck
               size={20}
@@ -180,7 +186,7 @@ const ContactMe = () => {
                 visibility: isLaunched ? "visible" : "hidden",
                 transform: `scale(${isLaunched ? 1 : 0})`,
                 transition: "transform 0.3s ease-in-out",
-                transitionDelay: isLaunched ? "1s" : "0s",
+                transitionDelay: isLaunched ? "0.5s" : "0s",
               }}
             />
 

@@ -7,7 +7,7 @@ import { FaRegEye } from "react-icons/fa";
 
 const ProjectCard = ({ project, onShowTech, index }) => {
   return (
-    <div className="parent lg:w-[850px] sm:w-[690px] w-full sm:h-[400px] h-[680px] sticky top-2 bg-violet9">
+    <div className="parent lg:w-[950px] w-full sm:h-[400px] h-[680px] sticky top-2 bg-violet9">
       <div className="div1 flex items-center px-5 bg-violet8 border rounded-md border-white/20  xl:text-5xl text-3xl font-bold text-white mb-2">
         {project.title}
       </div>
@@ -48,53 +48,6 @@ const ProjectCard = ({ project, onShowTech, index }) => {
     </div>
   );
 };
-// <div
-//   className={`sticky top-0 flex justify-center items-center`}
-//   style={{ zIndex: index + 10 }}
-// >
-//   <div className="project-card w-[350px] h-[28rem] font-normal">
-//     <div className="relative w-full cursor-pointer h-full duration-700 glass-bg rounded-2xl shadow-lg flex flex-col items-start justify-between p-6 overflow-hidden">
-//       {/* Github Link */}
-//       <a
-//         href={project.github}
-//         target="_blank"
-//         className="absolute w-12 h-12 cursor-pointer p-3 top-3 right-3 bg-gradient-to-tr from-[#6b6868] via-[#302d2d] to-black rounded-full"
-//       >
-//         <img src="/tech/github.png" className="object-cover" alt="github" />
-//       </a>
-
-//       {/* Preview Image */}
-//       <img
-//         src={project.img}
-//         alt="project preview"
-//         className="w-full h-52 object-cover rounded-xl mb-4"
-//       />
-
-//       {/* Title & Desc */}
-//       <h2 className="text-xl font-bold text-white mb-2">{project.title}</h2>
-//       <p className="text-xs text-white/50 font-normal line-clamp-6 text-start">
-//         {project.desc}
-//       </p>
-
-//       {/* Links */}
-//       <div className="w-full text-sm mt-3 flex gap-4 items-center justify-between">
-//         <a
-//           href={project.link}
-//           target="_blank"
-//           className="text-blue-400 flex items-center gap-2 hover:text-blue-300"
-//         >
-//           Live <FaRegEye />
-//         </a>
-//         <button
-//           className="text-xs cursor-pointer"
-//           onClick={() => onShowTech(project.tech)}
-//         >
-//           Tech Used →
-//         </button>
-//       </div>
-//     </div>
-//   </div>
-// </div>
 
 const Projects = () => {
   const [showModal, setShowModal] = useState(false);
@@ -117,12 +70,16 @@ const Projects = () => {
         </h1>
         <p className="text-primary mb-10 sm:w-[60%] w-full">
           Following projects showcase my skills and experience through
-          real-world examples of my work.
+          real-world examples of my work. <br />
+          Scroll on the projects to view more..
         </p>
       </div>
 
       {/* Stack Effect */}
-      <div className="flex mx-auto max-sm:w-full flex-col px-5 items-center gap-40 hide-scrollbar relative sm:h-[420px] h-[700px] overflow-y-scroll">
+      <div
+        title="Scroll on Me!"
+        className="flex mx-auto cursor-n-resize max-sm:w-full flex-col px-5 items-center gap-40 hide-scrollbar relative sm:h-[420px] h-[700px] overflow-y-scroll"
+      >
         {projects.map((project, index) => (
           <ProjectCard
             key={index}

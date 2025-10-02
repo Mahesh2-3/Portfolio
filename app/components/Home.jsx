@@ -99,7 +99,7 @@ const Home = () => {
         </ul>
       </div>
 
-      <ul className="navList flex sm:flex-nowrap flex-wrap z-[10] gap-y-3.5 bottom-22 items-center w-full absolute font-secondary justify-around md:text-xl sm:text-2xl text-xl">
+      <ul className="navList flex sm:flex-nowrap flex-wrap z-[10] gap-y-3.5 bottom-22 items-center w-full absolute font-alumni justify-around md:text-xl sm:text-2xl text-xl">
         {navLinks.map((element, index) => (
           <li
             key={index}

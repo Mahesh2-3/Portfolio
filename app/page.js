@@ -9,7 +9,7 @@ const About = React.lazy(() => import("./components/About"));
 const Skills = React.lazy(() => import("./components/Skills"));
 const Projects = React.lazy(() => import("./components/Projects"));
 const Experience = React.lazy(() => import("./components/Experience"));
-const FreeTemplates = React.lazy(() => import("./components/FreeTemplates"));
+const GetTemplates = React.lazy(() => import("./components/GetTemplates"));
 const ContactMe = React.lazy(() => import("./components/ContactMe"));
 
 export default function Home() {
@@ -74,11 +74,11 @@ export default function Home() {
           <Experience />
         </Suspense>
       </section>
-      <section id="free-templates" className="min-h-[75vh] relative z-[5]">
+      {/* <section id="free-templates" className="min-h-[75vh] relative z-[5]">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
-          <FreeTemplates />
+          <GetTemplates />
         </Suspense>
-      </section>
+      </section> */}
       <section id="get-in-touch" className="min-h-[100vh] relative z-[5]">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <ContactMe />

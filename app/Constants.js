@@ -23,6 +23,8 @@ export const navLinks = [
   { name: "GET IN TOUCH", src: "#get-in-touch" },
 ];
 
+export const Templates = ["template1", "template2", "template3"];
+
 export const SocialLinks = [
   {
     name: "LinkedIn",
@@ -35,6 +37,86 @@ export const SocialLinks = [
     src: "https://github.com/Mahesh2-3",
     icon: FaGithub,
     color: "#fff",
+  },
+];
+
+export const StepsToProceed = [
+  "Pick the template you like by previewing the templates.",
+  "Scroll down and select that template.",
+  "Enter the necessary data for your portfolio.",
+  "Before Paying, First read Faq's down below ↓",
+  "Pay the required amount to place an order.",
+  "Within five days, you will receive the website link through your email.",
+];
+
+export const requiredData = {
+  template1: [
+    "hero.name",
+    "hero.quote",
+    "hero.role",
+    "hero.currentlyWorking",
+    "hero.about",
+    "works",
+    "skills",
+    "projects",
+    "contact.line",
+    "contact.email",
+    "contact.links",
+  ],
+  template2: [
+    "hero.profile", // if exists
+    "hero.name",
+    "hero.role",
+    "hero.about",
+    "works",
+    "skills",
+    "projects",
+    "contact.line",
+    "contact.email",
+    "contact.links",
+  ],
+  template3: [
+    "hero.currentlyWorking",
+    "hero.name",
+    "hero.role",
+    "hero.about",
+    "works",
+    "skills",
+    "projects",
+    "contact.line",
+    "contact.email",
+    "contact.links",
+  ],
+};
+
+export const FAQs = [
+  {
+    q: "How do I get the website?",
+    a: "You will get the website link through your email after placing an order.",
+  },
+  {
+    q: "Duration of receiving the order?",
+    a: "You will receive the order within 5 days after placing an order.",
+  },
+  {
+    q: "Can I customize templates?",
+    a: "Yes! You can tell your customizations in the suggestion box in the above form.",
+  },
+  {
+    q: "How do I choose between templates?",
+    a: "Just click the template you like in the form.",
+  },
+  {
+    q: "How can I request a refund after placing an order?",
+    a: "You can go to your orders and cancel within 24 hours of placing it.",
+  },
+  {
+    q: "Can I add unlimited skills and projects?",
+    a: "Adding too many is not professional and also increases the website's load, which can make it slower. We recommend about 20 skills and 5 projects.",
+  },
+  {
+    q: "Why do we have to pay?",
+    a: "To avoid misuse and unnecessary orders, ensuring that the service remains reliable, high-quality, and available for those who genuinely need it.",
   },
 ];
 

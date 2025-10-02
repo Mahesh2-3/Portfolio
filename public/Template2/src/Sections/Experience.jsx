@@ -13,7 +13,7 @@ const ExperienceBit = ({ work, index }) => {
         {index + 1}.
       </div>
       <div className="sm:w-[40%] w-[80%]">
-        <h3 className="font-bold text-xl font-secondary">{work.title}</h3>
+        <h3 className="font-bold text-xl font-alumni">{work.title}</h3>
         <p className="text-gray-600">{work.company}</p>
         <p className="mt-2 line-clamp-3 max-sm:text-sm">{work.desc}</p>
       </div>

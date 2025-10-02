@@ -7,8 +7,10 @@ const Contact = () => {
       <h1 className="font-primary mb-7 font-bold w-fit tracking-[0.2em] text-center text-3xl ">
         Contact
       </h1>
-      <p className="lg:w-[50%] max-sm:text-sm tracking-wider w-full">{ContactContent.line}</p>
-      <p className="my-5 font-secondary font-bold tracking-wide">
+      <p className="lg:w-[50%] max-sm:text-sm tracking-wider w-full">
+        {ContactContent.line}
+      </p>
+      <p className="my-5 font-alumni font-bold tracking-wide">
         {ContactContent.email}
       </p>
 
