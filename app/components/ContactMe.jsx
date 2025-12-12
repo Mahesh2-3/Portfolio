@@ -177,7 +177,7 @@ const ContactMe = () => {
             }}
           >
             <span>
-              {loading ? "Sending..." : isLaunched ? "Sent ✅" : "Send Message"}
+              {loading ? "Sending..." : isLaunched ? "Sent" : "Send Message"}
             </span>
 
             <FaCheck
