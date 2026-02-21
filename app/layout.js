@@ -32,6 +32,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+      </head>
       <body
         className={`${lilita.variable} ${alumni.variable} ${ubuntu.variable} antialiased`}
       >
@@ -39,11 +42,11 @@ export default function RootLayout({ children }) {
         <Image
           width={56}
           height={56}
-          loading="lazy"
+          priority
           title="Mahesh Babu"
           src="/logo.webp"
           alt="logo"
-          className="w-14 h-14 rounded-full fixed cursor-pointer top-6 right-6"
+          className="w-14 h-auto rounded-full fixed cursor-pointer top-6 right-6"
         />
       </body>
     </html>

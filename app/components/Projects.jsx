@@ -1,49 +1,85 @@
 import { useState } from "react";
-import { projects } from "../Constants";
+import { projects, PROJECTS_CONTENT } from "../Constants";
 import { IoMdClose } from "react-icons/io";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { FaRegEye } from "react-icons/fa";
+import Image from "next/image";
 
-const ProjectCard = ({ project, onShowTech, index }) => {
+const ProjectCard = ({ project, onShowTech }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <div className="parent lg:w-[950px] w-full sm:h-[400px] h-[680px] sticky top-2 bg-violet9">
-      <div className="div1 flex items-center px-5 bg-violet8 border rounded-md border-white/20  xl:text-5xl text-3xl font-bold text-white mb-2">
-        {project.title}
-      </div>
-      <div className="div2 bg-violet8 border rounded-md border-white/20  flex items-center xl:text-base text-sm px-5 text-white/50 font-normal text-start">
-        {project.desc}
-      </div>
-      <img
-        src={project.img}
-        alt="project preview"
-        className="div3 h-[260px] border border-white/20 rounded-md w-full object-contain "
-      />
-      <div className="div4 flex items-center justify-evenly bg-violet8 border rounded-md border-white/20 ">
-        <a
-          href={project.github}
-          target="_blank"
-          className="w-8 h-8 cursor-pointer p-3 bg-gradient-to-tr from-violet2 via-violet4 to-violet9 rounded-full"
+    <div className="project-card fade-in group w-[350px] h-[28rem] font-normal [perspective:1000px]">
+      <div
+        className={`relative w-full hover:translate-y-[-15px] cursor-pointer h-full duration-700 [transform-style:preserve-3d] ${
+          isFlipped ? "[transform:rotateY(180deg)]" : ""
+        }`}
+        onClick={() => setIsFlipped(!isFlipped)}
+      >
+        {/* Front Side */}
+        <div
+          title="Click Me to Flip!"
+          className="absolute inset-0 shadow-lg border bg-violet9/80 border-violet3/20 rounded-2xl flex flex-col items-start justify-between p-6 overflow-hidden [backface-visibility:hidden]"
         >
-          <img
-            src="/tech/github.png"
-            className="object-cover scale-[2]"
-            alt="github"
+          <a
+            href={project.github}
+            target="_blank"
+            onClick={(e) => e.stopPropagation()}
+            className="absolute w-12 h-12 cursor-pointer p-3 top-3 right-3 bg-gradient-to-tr from-[#6b6868] via-[#302d2d] to-black rounded-full z-10"
+          >
+            <Image
+              width={48}
+              height={48}
+              src="/tech/github.png"
+              className="w-full h-full object-cover"
+              alt="github"
+            />
+          </a>
+          <Image
+            width={400}
+            height={250}
+            src={project.img}
+            alt="project preview"
+            className="w-full h-52 object-cover rounded-xl mb-4"
           />
-        </a>
-        <a
-          href={project.link}
-          target="_blank"
-          className="text-violet2 flex items-center gap-2 hover:text-blue-300"
-        >
-          Live <FaRegEye />
-        </a>
-        <button
-          className="text-xs text-violet2 cursor-pointer"
-          onClick={() => onShowTech(project.tech)}
-        >
-          Tech Used →
-        </button>
+          <h2 className="text-xl font-bold text-white mb-2">{project.title}</h2>
+          <p className="text-xs text-white/50 font-normal line-clamp-6 overflow-ellipsis text-start">
+            {project.desc}
+          </p>
+          <div className="w-full text-sm mt-3 flex gap-4 items-center justify-between z-10">
+            <a
+              href={project.link}
+              target="_blank"
+              onClick={(e) => e.stopPropagation()}
+              className="text-blue-400 flex items-center gap-2 hover:text-blue-300"
+            >
+              {PROJECTS_CONTENT.liveText} <FaRegEye />
+            </a>
+            <button
+              className="text-xs cursor-pointer z-10"
+              onClick={(e) => {
+                e.stopPropagation();
+                onShowTech(project.tech);
+              }}
+            >
+              {PROJECTS_CONTENT.techUsedBtn}
+            </button>
+          </div>
+        </div>
+
+        {/* Back Side */}
+        <div className="absolute inset-0 shadow-lg border bg-[#05000f] border-violet3/20 rounded-2xl flex flex-col items-start p-6 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <h2 className="text-2xl font-bold text-white mb-4 border-b border-white/20 pb-2 w-full">
+            {project.title}
+          </h2>
+          <div className="overflow-y-auto hide-scrollbar text-sm text-white/80 font-normal text-start leading-relaxed h-[85%] pr-2">
+            {project.desc}
+          </div>
+          <p className="text-xs text-white/40 mt-auto pt-4 text-center w-full italic">
+            Click to flip back
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -63,27 +99,21 @@ const Projects = () => {
       {/* Heading */}
       <div className="sm:px-15 px-7">
         <span className="text-lg text-primary w-full text-start font-normal mt-20 block">
-          My Work
+          {PROJECTS_CONTENT.subHeading}
         </span>
         <h1 className="heading font-extrabold w-full text-start mb-3">
-          Projects
+          {PROJECTS_CONTENT.heading}
         </h1>
         <p className="text-primary mb-10 sm:w-[60%] w-full">
-          Following projects showcase my skills and experience through
-          real-world examples of my work. <br />
-          Scroll on the projects to view more..
+          {PROJECTS_CONTENT.description}
         </p>
       </div>
 
-      {/* Stack Effect */}
-      <div
-        title="Scroll on Me!"
-        className="flex mx-auto cursor-n-resize max-sm:w-full flex-col px-5 items-center gap-40 hide-scrollbar relative sm:h-[420px] h-[700px] overflow-y-scroll"
-      >
+      {/* Projects Grid */}
+      <div className="flex flex-wrap justify-center gap-10 mt-10 pb-10">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
-            index={index}
             project={project}
             onShowTech={handleShowTech}
           />
@@ -94,7 +124,9 @@ const Projects = () => {
       {showModal && (
         <div className="fixed w-full inset-0 flex items-center justify-center bg-black/60 z-[999]">
           <div className="bg-white/10 border backdrop-blur-md border-white/20 p-4 rounded-xl sm:w-[600px] h-[90vh] w-[100vw] max-h-[80vh] shadow-2xl">
-            <h2 className="text-xl font-bold mb-4 pl-4">Technologies Used</h2>
+            <h2 className="text-xl font-bold mb-4 pl-4">
+              {PROJECTS_CONTENT.techModalTitle}
+            </h2>
             <SyntaxHighlighter
               language="json"
               style={vscDarkPlus}

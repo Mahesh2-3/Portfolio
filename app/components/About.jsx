@@ -1,5 +1,6 @@
-"use client";
+import { ABOUT_CONTENT } from "../Constants";
 import useFadeInAnimation from "./hooks/FadeInAnimation";
+import Image from "next/image";
 
 import { useState } from "react";
 
@@ -27,7 +28,7 @@ const GlowingCard = ({ word, src }) => {
       >
         {/* Front Side */}
         <div className="absolute inset-0 glass-bg shadow-lg flex items-center justify-center [backface-visibility:hidden] rounded-2xl">
-          <img width={80} height={80} src={src} alt="image" />
+          <Image width={80} height={80} src={src} alt="image" />
         </div>
 
         {/* Back Side */}
@@ -50,19 +51,17 @@ const About = () => {
       className="w-full h-full flex flex-col justify-around"
     >
       <div className="mb-20">
-        <h1 className="heading fade-in">About Me</h1>
+        <h1 className="heading fade-in">{ABOUT_CONTENT.heading}</h1>
         <div className="fade-in mt-10 tracking-wide sm:w-[60%] w-full text-primary">
-          HI there, I'm <span className="font-bold text-white">MAHESH</span>,
-          I'm a skilled software developer with experience in JavaScript, and
-          expertise in frameworks like React, Node.js, and Three.js. I'm a quick
-          learner and collaborate closely with clients to create efficient,
-          scalable, and user-friendly solutions that solve real-world problems.
-          Let's work together to bring your ideas to life!
+          {ABOUT_CONTENT.description}
         </div>
       </div>
       <div className="flex flex-wrap gap-6 sm:items-start items-center">
-        <GlowingCard word={"FRONTEND DEVELOPER"} src={"/frontend.png"} />
-        <GlowingCard word={"BACKEND DEVELOPER"} src={"/backend.png"} />
+        <GlowingCard
+          word={ABOUT_CONTENT.roles.frontend}
+          src={"/frontend.png"}
+        />
+        <GlowingCard word={ABOUT_CONTENT.roles.backend} src={"/backend.png"} />
       </div>
     </div>
   );

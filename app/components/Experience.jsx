@@ -1,4 +1,4 @@
-import { Experiences } from "../Constants";
+import { Experiences, EXPERIENCE_CONTENT } from "../Constants";
 import useFadeInAnimation from "./hooks/FadeInAnimation";
 
 const ExperienceItem = ({ experience, index }) => {
@@ -31,9 +31,9 @@ const Experience = () => {
   useFadeInAnimation();
   return (
     <div className="w-full h-full mt-30 sm:px-10 px-5 flex flex-col sm:items-start items-center">
-      <h1 className="heading fade-in fade-in">Experience</h1>
+      <h1 className="heading fade-in fade-in">{EXPERIENCE_CONTENT.heading}</h1>
       <span className="font-normal fade-in text-primary mb-20 text-xl">
-        What i have done so far
+        {EXPERIENCE_CONTENT.subHeading}
       </span>
       <div className="flex flex-col gap-10">
         {Experiences.map((exp, index) => (

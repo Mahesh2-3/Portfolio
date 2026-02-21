@@ -1,4 +1,4 @@
-"use client";
+import { CONTACT_CONTENT } from "../Constants";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import StarfieldBackground from "./Animations/Stars";
@@ -11,7 +11,6 @@ const ContactMe = () => {
   const [isLaunched, setIsLaunched] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // ✅ react-hook-form
   const {
     register,
     handleSubmit,
@@ -20,7 +19,7 @@ const ContactMe = () => {
   } = useForm();
 
   const onSubmit = (form) => {
-    setLoading(true); // start loading
+    setLoading(true);
 
     emailjs
       .send(
@@ -33,14 +32,12 @@ const ContactMe = () => {
           to_email: "maheshkarna32@gmail.com",
           message: form.message,
         },
-        process.env.NEXT_PUBLIC_PUBLICKEY
+        process.env.NEXT_PUBLIC_PUBLICKEY,
       )
       .then(
         () => {
-          // ✅ success
-          alert("✅ Thank you! I’ll get back to you as soon as possible.");
+          alert(CONTACT_CONTENT.alerts.success);
 
-          // Confirmation email
           emailjs.send(
             process.env.NEXT_PUBLIC_SERVICEID,
             process.env.NEXT_PUBLIC_TEMPLATE2,
@@ -50,12 +47,11 @@ const ContactMe = () => {
               to_email: form.email,
               from_email: "maheshkarna32@gmail.com",
             },
-            process.env.NEXT_PUBLIC_PUBLICKEY
+            process.env.NEXT_PUBLIC_PUBLICKEY,
           );
 
           reset();
 
-          // 🚀 Animate + show "Sent"
           setIsLaunched(true);
           if (rocketRef.current) {
             rocketRef.current.classList.add("rocket-launch");
@@ -69,14 +65,12 @@ const ContactMe = () => {
           }, 4000);
         },
         (error) => {
-          // ❌ error case
           console.error(error);
-          alert("❌ Something went wrong. Please try again.");
-          setLoading(false); // stop loading immediately on error
-        }
+          alert(CONTACT_CONTENT.alerts.error);
+          setLoading(false);
+        },
       )
       .finally(() => {
-        // ✅ stop loading (only if it wasn’t already stopped on error)
         setLoading(false);
       });
   };
@@ -101,20 +95,24 @@ const ContactMe = () => {
       <StarfieldBackground />
       <div className="p-3">
         <h1 className="heading mb-10 mt-15 fade-in z-[10] relative sm:pl-10 pl-5">
-          Get In Touch
+          {CONTACT_CONTENT.heading}
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col fade-in relative top-20 font-normal justify-evenly gap-4 p-6 bg-violet4/5 border border-white/20 rounded-2xl sm:max-w-[600px] w-full mx-auto h-[500px] backdrop-blur-sm"
         >
-          <span className="text-4xl text-white font-extrabold">Contact Me</span>
+          <span className="text-4xl text-white font-extrabold">
+            {CONTACT_CONTENT.formTitle}
+          </span>
           {/* Name */}
           <div className="flex flex-col gap-1">
             <input
               type="text"
-              placeholder="Your Good Name"
+              placeholder={CONTACT_CONTENT.placeholders.name}
               className="w-full rounded-lg border border-white/20 p-3"
-              {...register("name", { required: "Name is required" })}
+              {...register("name", {
+                required: CONTACT_CONTENT.validation.nameRequired,
+              })}
             />
             {errors.name && (
               <span className="text-red-500 text-sm">
@@ -127,13 +125,13 @@ const ContactMe = () => {
           <div className="flex flex-col gap-1">
             <input
               type="email"
-              placeholder="Your Email"
+              placeholder={CONTACT_CONTENT.placeholders.email}
               className="w-full rounded-lg border border-white/20 p-3"
               {...register("email", {
-                required: "Email is required",
+                required: CONTACT_CONTENT.validation.emailRequired,
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: "Enter a valid email",
+                  message: CONTACT_CONTENT.validation.emailPattern,
                 },
               })}
             />
@@ -147,9 +145,11 @@ const ContactMe = () => {
           {/* Message */}
           <div className="flex flex-col gap-1">
             <textarea
-              placeholder="Your Message"
+              placeholder={CONTACT_CONTENT.placeholders.message}
               className="w-full rounded-lg border border-white/20 p-3 h-[100px]"
-              {...register("message", { required: "Message is required" })}
+              {...register("message", {
+                required: CONTACT_CONTENT.validation.messageRequired,
+              })}
             />
             {errors.message && (
               <span className="text-red-500 text-sm">
@@ -164,7 +164,7 @@ const ContactMe = () => {
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
             disabled={loading}
-            className={`flex items-center overflow-hidden justify-center gap-2 font-semibold text-white p-2 h-[50px] cursor-pointer transition-all ease-in-out duration-300 rounded-md ${
+            className={`flex items-center overflow-hidden justify-center gap-2 font-semibold text-white p-2 h-[50px] cursor-pointer transition ease-in-out duration-300 rounded-md ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
             style={{
@@ -177,7 +177,11 @@ const ContactMe = () => {
             }}
           >
             <span>
-              {loading ? "Sending..." : isLaunched ? "Sent" : "Send Message"}
+              {loading
+                ? CONTACT_CONTENT.btnSending
+                : isLaunched
+                  ? CONTACT_CONTENT.btnSent
+                  : CONTACT_CONTENT.btnDefault}
             </span>
 
             <FaCheck

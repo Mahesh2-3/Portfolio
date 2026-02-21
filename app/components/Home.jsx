@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { navLinks, SocialLinks } from "../Constants";
+import { navLinks, SocialLinks, HERO_CONTENT } from "../Constants";
 import { FaDownload } from "react-icons/fa";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
 
   // Text animation
   const TextAnimation = () => {
-    const name = "MAHESH";
+    const name = HERO_CONTENT.name;
     const element = document.getElementById("Name");
     if (!element) return;
 
@@ -27,7 +27,7 @@ const Home = () => {
       const char = name[i];
       const timeout = setTimeout(() => {
         element.innerText += char;
-        if (i === name.length - 1) {
+        if (i === name.length - 3) {
           // Apply shadow only after full text
           element.style.setProperty("--shadow-x", "-3px");
           element.style.setProperty("--shadow-y", "3px");
@@ -54,7 +54,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 3000); // 1s delay
+    const timer = setTimeout(() => setShow(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -66,15 +66,15 @@ const Home = () => {
       <div className="flex flex-col gap-4 px-5">
         <div
           id="Name"
-          className="font-bold font-primary  z-10 md:text-9xl text-7xl text-[#fff] transition-all tracking-wider ease-in-out select-none duration-700 blink-cursor"
+          className="font-bold font-primary  z-10 md:text-9xl text-7xl text-[#fff] transition-transform tracking-wider ease-in-out select-none duration-700 blink-cursor"
         ></div>
         <div
           style={{ transitionDelay: "0ms" }}
-          className={`opacity-0 transition-all duration-700 text-primary  tracking-[0.2em] sm:text-2xl text-lg z-10 ${
+          className={`opacity-0 transition-opacity duration-700 text-primary  tracking-[0.2em] sm:text-2xl text-lg z-10 ${
             showNav ? "opacity-100" : ""
           }`}
         >
-          FULL STACK WEB DEVELOPER
+          {HERO_CONTENT.role}
         </div>
       </div>
 
@@ -83,9 +83,9 @@ const Home = () => {
           show ? "opacity-100" : "opacity-0"
         } transition-opacity duration-300 ease-in-out flex-col px-5 relative top-7 lg:items-end items-start justify-center gap-4`}
       >
-        <a href="/resume.pdf" download="MaheshResume.pdf">
-          <button className="flex gap-2 font-bold tracking-widest items-center rounded-md justify-center bg-violet8 sm:py-3 py-2 cursor-pointer  sm:px-6 px-4 border border-violet4 text-white transition-all duration-300">
-            Resume <FaDownload />{" "}
+        <a href={HERO_CONTENT.resumeLink} download="MaheshResume.pdf">
+          <button className="flex gap-2 font-bold tracking-widest items-center rounded-md justify-center bg-violet8 sm:py-3 py-2 cursor-pointer  sm:px-6 px-4 border border-violet4 text-white transition-colors duration-300">
+            {HERO_CONTENT.resumeText} <FaDownload />{" "}
           </button>
         </a>
         <ul className="flex gap-2 items-center">
@@ -104,18 +104,18 @@ const Home = () => {
           <li
             key={index}
             style={{
-              transitionDelay: showNav ? `${index * 300 + 1300}ms` : "0ms",
+              transitionDelay: showNav ? `${index * 300}ms` : "0ms",
             }}
-            className={`transition-all tracking-wider sm:w-fit w-[50%] text-[#ffffff] cursor-pointer duration-700 ease-in-out ${
+            className={`transition tracking-wider sm:w-fit w-[50%] text-[#ffffff] cursor-pointer duration-700 ease-in-out ${
               showNav ? "opacity-100 translate-y-0" : "translate-y-10 opacity-0"
             }`}
           >
             <a
               href={element.src}
-              className="relative group font-bold hover:text-white flex transition-all duration-300 items-center flex-col"
+              className="relative group font-bold hover:text-white flex transition-colors duration-300 items-center justify-center flex-col"
             >
               {element.name}
-              <span className="left-1/2 -bottom-1 sm:block hidden h-[1px] w-0 bg-primary transition-all duration-500  ease-out group-hover:w-[130%] group-hover:left-[-5px]"></span>
+              <span className=" -bottom-1 sm:block hidden h-[1px] w-[130%] scale-x-0 origin-center bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100"></span>
             </a>
           </li>
         ))}

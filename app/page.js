@@ -4,13 +4,18 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 import LightRays from "./components/Animations/LightRays";
 import HomePage from "./components/Home";
 
+import dynamic from "next/dynamic";
+
 // Lazy-loaded components
-const About = React.lazy(() => import("./components/About"));
-const Skills = React.lazy(() => import("./components/Skills"));
-const Projects = React.lazy(() => import("./components/Projects"));
-const Experience = React.lazy(() => import("./components/Experience"));
-const GetTemplates = React.lazy(() => import("./components/GetTemplates"));
-const ContactMe = React.lazy(() => import("./components/ContactMe"));
+const About = dynamic(() => import("./components/About"), { ssr: false });
+const Skills = dynamic(() => import("./components/Skills"), { ssr: false });
+const Projects = dynamic(() => import("./components/Projects"), { ssr: false });
+const Experience = dynamic(() => import("./components/Experience"), {
+  ssr: false,
+});
+const ContactMe = dynamic(() => import("./components/ContactMe"), {
+  ssr: false,
+});
 
 export default function Home() {
   const mainref = useRef(null);
@@ -74,11 +79,6 @@ export default function Home() {
           <Experience />
         </Suspense>
       </section>
-      {/* <section id="free-templates" className="min-h-[75vh] relative z-[5]">
-        <Suspense fallback={<div className="text-white">Loading...</div>}>
-          <GetTemplates />
-        </Suspense>
-      </section> */}
       <section id="get-in-touch" className="min-h-[100vh] relative z-[5]">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <ContactMe />
