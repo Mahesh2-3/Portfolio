@@ -12,7 +12,7 @@ const ProjectCard = ({ project, onShowTech }) => {
   return (
     <div className="project-card fade-in group w-[350px] h-[28rem] font-normal [perspective:1000px]">
       <div
-        className={`relative w-full hover:translate-y-[-15px] cursor-pointer h-full duration-700 [transform-style:preserve-3d] ${
+        className={`relative w-full b hover:translate-y-[-15px] cursor-pointer h-full duration-700 [transform-style:preserve-3d] ${
           isFlipped ? "[transform:rotateY(180deg)]" : ""
         }`}
         onClick={() => setIsFlipped(!isFlipped)}
@@ -20,7 +20,11 @@ const ProjectCard = ({ project, onShowTech }) => {
         {/* Front Side */}
         <div
           title="Click Me to Flip!"
-          className="absolute inset-0 shadow-lg border bg-violet9/80 border-violet3/20 rounded-2xl flex flex-col items-start justify-between p-6 overflow-hidden [backface-visibility:hidden]"
+          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start justify-between p-6 overflow-hidden [backface-visibility:hidden] ${
+            project.isGold
+              ? "bg-gradient-to-br from-[#2c2100] via-[#bfa100] to-[#1a1400] border border-yellow-400/40 shadow-xl shadow-yellow-500/20"
+              : "bg-violet9/80 border-violet3/20"
+          }`}
         >
           <a
             href={project.github}
@@ -43,21 +47,31 @@ const ProjectCard = ({ project, onShowTech }) => {
             alt="project preview"
             className="w-full h-52 object-cover rounded-xl mb-4"
           />
-          <h2 className="text-xl font-bold text-white mb-2">{project.title}</h2>
-          <p className="text-xs text-white/50 font-normal line-clamp-6 overflow-ellipsis text-start">
+          <h2
+            className={`text-xl font-bold mb-2 ${
+              project.isGold ? "text-yellow-400" : "text-white"
+            }`}
+          >
+            {project.title}
+          </h2>
+          <p
+            className={`text-xs ${project.isGold ? "text-[#fff6d6]" : "text-white/50"} font-normal line-clamp-6 overflow-ellipsis text-start`}
+          >
             {project.desc}
           </p>
-          <div className="w-full text-sm mt-3 flex gap-4 items-center justify-between z-10">
+          <div className="w-full  text-sm mt-3 flex gap-4 items-center justify-between z-10">
             <a
               href={project.link}
               target="_blank"
               onClick={(e) => e.stopPropagation()}
-              className="text-blue-400 flex items-center gap-2 hover:text-blue-300"
+              className={`text-blue-400 ${project.isGold ? "bg-white/60" : "bg-black"} px-4 py-2 rounded-full flex items-center gap-2 hover:text-blue-300`}
             >
               {PROJECTS_CONTENT.liveText} <FaRegEye />
             </a>
             <button
-              className="text-xs cursor-pointer z-10"
+              className={`text-xs cursor-pointer z-10 ${
+                project.isGold ? "text-yellow-200/80 hover:text-yellow-200" : ""
+              }`}
               onClick={(e) => {
                 e.stopPropagation();
                 onShowTech(project.tech);
@@ -69,8 +83,21 @@ const ProjectCard = ({ project, onShowTech }) => {
         </div>
 
         {/* Back Side */}
-        <div className="absolute inset-0 shadow-lg border bg-[#05000f] border-violet3/20 rounded-2xl flex flex-col items-start p-6 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <h2 className="text-2xl font-bold text-white mb-4 border-b border-white/20 pb-2 w-full">
+
+        <div
+          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start p-6 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] ${
+            project.isGold
+              ? "bg-linear-to-br from-[#554101] to-black border-yellow-500/80 shadow-[0_0_15px_rgba(234,179,8,0.2)]"
+              : "bg-violet9 border-violet3/20"
+          }`}
+        >
+          <h2
+            className={`text-2xl font-bold mb-4 border-b pb-2 w-full ${
+              project.isGold
+                ? "text-yellow-400 border-yellow-500/30"
+                : "text-white border-white/20"
+            }`}
+          >
             {project.title}
           </h2>
           <div className="overflow-y-auto hide-scrollbar text-sm text-white/80 font-normal text-start leading-relaxed h-[85%] pr-2">
