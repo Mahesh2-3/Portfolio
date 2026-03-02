@@ -94,7 +94,7 @@ const ContactMe = () => {
     <div className="relative w-full min-h-[1000px] pb-20">
       <StarfieldBackground />
       <div className="p-3">
-        <h1 className="heading mb-10 mt-15 fade-in z-[10] relative sm:pl-10 pl-5">
+        <h1 className="heading mb-10 mt-15 fade-in z-10 relative sm:pl-10 pl-5">
           {CONTACT_CONTENT.heading}
         </h1>
         <form

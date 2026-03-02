@@ -4,7 +4,7 @@ import useFadeInAnimation from "./hooks/FadeInAnimation";
 const ExperienceItem = ({ experience, index }) => {
   return (
     <div className="relative fade-in font-normal flex gap-15">
-      <div className="sm:relative absolute z-5 top-[-20px] w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-[0px_0px_15px_0px_#c229b4] flex items-center justify-center font-bold text-xl rounded-full ">
+      <div className="sm:relative absolute z-5 top-[-20px] w-12 h-12 bg-linear-to-br from-purple-600 to-pink-600 text-white shadow-[0px_0px_15px_0px_#c229b4] flex items-center justify-center font-bold text-xl rounded-full ">
         {index + 1}
       </div>
       <div className="content max-w-[500px] glass-bg">

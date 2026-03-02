@@ -194,7 +194,7 @@ export const projects = [
     title: "Todo2.0",
     isGold: true,
     link: "https://todo2-0new.vercel.app/",
-    desc: "This is the latest version of our To-Do platform, designed to help you stay organized. You can manage tasks, schedule activities, and maintain a diary — all in one place. The platform is secured with a reliable login system, and you can report issues for quick support.",
+    desc: "I developed a full stack Task Managing platform.This is the latest version of our Todo2.0, designed to help you stay organized. You can manage tasks, schedule activities, and maintain a diary all in one place. Here you can see the dashboard with graph and calendar view. The platform is secured with a reliable login system, and you can report issues for quick support.",
     github: "https://github.com/Mahesh2-3/Todo2.0",
     img: "https://res.cloudinary.com/dhiluevpk/image/upload/w_400,q_auto,f_auto/v1756482687/blog_images/jxxfqgs6zpanyobujvke.png",
     tech: {
@@ -346,7 +346,7 @@ export const HERO_CONTENT = {
 export const ABOUT_CONTENT = {
   heading: "About Me",
   description:
-    "HI there, I'm MAHESH, I'm a skilled software developer with experience in JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!",
+    "HI there, I'm MAHESH, I'm a skilled software developer with experience in JavaScript, and expertise in frameworks like React, Node.js, and Next.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!",
   roles: {
     frontend: "FRONTEND DEVELOPER",
     backend: "BACKEND DEVELOPER",

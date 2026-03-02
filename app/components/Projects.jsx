@@ -10,19 +10,19 @@ const ProjectCard = ({ project, onShowTech }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="project-card fade-in group w-[350px] h-[28rem] font-normal [perspective:1000px]">
+    <div className="project-card fade-in group w-[350px] h-112 font-normal perspective-[1000px]">
       <div
-        className={`relative w-full b hover:translate-y-[-15px] cursor-pointer h-full duration-700 [transform-style:preserve-3d] ${
-          isFlipped ? "[transform:rotateY(180deg)]" : ""
+        className={`relative w-full b hover:translate-y-[-15px] cursor-pointer h-full duration-700 transform-3d ${
+          isFlipped ? "transform-[rotateY(180deg)]" : ""
         }`}
         onClick={() => setIsFlipped(!isFlipped)}
       >
         {/* Front Side */}
         <div
           title="Click Me to Flip!"
-          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start justify-between p-6 overflow-hidden [backface-visibility:hidden] ${
+          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start justify-between p-6 overflow-hidden backface-hidden ${
             project.isGold
-              ? "bg-gradient-to-br from-[#2c2100] via-[#bfa100] to-[#1a1400] border border-yellow-400/40 shadow-xl shadow-yellow-500/20"
+              ? "bg-linear-to-br from-[#2c2100] via-[#bfa100] to-[#1a1400] border border-yellow-400/40 shadow-xl shadow-yellow-500/20"
               : "bg-violet9/80 border-violet3/20"
           }`}
         >
@@ -30,7 +30,7 @@ const ProjectCard = ({ project, onShowTech }) => {
             href={project.github}
             target="_blank"
             onClick={(e) => e.stopPropagation()}
-            className="absolute w-12 h-12 cursor-pointer p-3 top-3 right-3 bg-gradient-to-tr from-[#6b6868] via-[#302d2d] to-black rounded-full z-10"
+            className="absolute w-12 h-12 cursor-pointer p-3 top-3 right-3 bg-linear-to-tr from-[#6b6868] via-[#302d2d] to-black rounded-full z-10"
           >
             <Image
               width={48}
@@ -85,7 +85,7 @@ const ProjectCard = ({ project, onShowTech }) => {
         {/* Back Side */}
 
         <div
-          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start p-6 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)] ${
+          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start p-6 overflow-hidden backface-hidden transform-[rotateY(180deg)] ${
             project.isGold
               ? "bg-linear-to-br from-[#554101] to-black border-yellow-500/80 shadow-[0_0_15px_rgba(234,179,8,0.2)]"
               : "bg-violet9 border-violet3/20"
@@ -149,8 +149,8 @@ const Projects = () => {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed w-full inset-0 flex items-center justify-center bg-black/60 z-[999]">
-          <div className="bg-white/10 border backdrop-blur-md border-white/20 p-4 rounded-xl sm:w-[600px] h-[90vh] w-[100vw] max-h-[80vh] shadow-2xl">
+        <div className="fixed w-full inset-0 flex items-center justify-center bg-black/60 z-999">
+          <div className="bg-white/10 border backdrop-blur-md border-white/20 p-4 rounded-xl sm:w-[600px] h-[90vh] w-screen max-h-[80vh] shadow-2xl">
             <h2 className="text-xl font-bold mb-4 pl-4">
               {PROJECTS_CONTENT.techModalTitle}
             </h2>

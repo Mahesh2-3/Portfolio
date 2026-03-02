@@ -1,73 +1,49 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { navLinks, SocialLinks, HERO_CONTENT } from "../Constants";
 import { FaDownload } from "react-icons/fa";
+import SplitText from "./Animations/splitText";
 
 const Home = () => {
   const [showNav, setshowNav] = useState(false);
   const [show, setShow] = useState(false);
-  const timeouts = useRef([]);
 
-  // Text animation
-  const TextAnimation = () => {
-    const name = HERO_CONTENT.name;
-    const element = document.getElementById("Name");
-    if (!element) return;
-
-    // Clear previous timeouts
-    timeouts.current.forEach(clearTimeout);
-    timeouts.current = [];
-
-    // Reset text & shadow
-    element.innerText = "";
-    element.style.setProperty("--shadow-x", "0px");
-    element.style.setProperty("--shadow-y", "0px");
-
-    for (let i = 0; i < name.length; i++) {
-      const char = name[i];
-      const timeout = setTimeout(() => {
-        element.innerText += char;
-        if (i === name.length - 3) {
-          // Apply shadow only after full text
-          element.style.setProperty("--shadow-x", "-3px");
-          element.style.setProperty("--shadow-y", "3px");
-          setTimeout(() => {
-            element.style.transition = "transform 1s ease-in-out";
-            // element.style.transform = "translateX(0%)";
-            setshowNav(true);
-          }, 500);
-        }
-      }, i * 200);
-      timeouts.current.push(timeout);
-    }
-  };
-
-  // measure section heights dynamically
   useEffect(() => {
-    setTimeout(() => {
-      TextAnimation();
-    }, 1000);
-
-    return () => {
-      timeouts.current.forEach(clearTimeout);
-    };
+    const navTimer = setTimeout(() => setshowNav(true), 500);
+    return () => clearTimeout(navTimer);
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(true), 1000);
+    const timer = setTimeout(() => setShow(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
       style={{ margin: "0 auto" }}
-      className=" relative h-[100vh] z-[5] pb-20 flex lg:flex-row flex-col  lg:items-center items-start lg:justify-between justify-center lg:gap-0 gap-10"
+      className=" relative h-screen z-5 pb-20 flex lg:flex-row flex-col  lg:items-center items-start lg:justify-between justify-center lg:gap-0 gap-10"
     >
       <div className="flex flex-col gap-4 px-5">
         <div
           id="Name"
-          className="font-bold font-primary  z-10 md:text-9xl text-7xl text-[#fff] transition-transform tracking-wider ease-in-out select-none duration-700 blink-cursor"
-        ></div>
+          className=""
+          style={{ "--shadow-x": "-3px", "--shadow-y": "3px" }}
+        >
+          <SplitText
+            text={HERO_CONTENT.name}
+            className="font-bold font-primary z-10 md:text-9xl text-7xl text-white tracking-wider select-none"
+            delay={50}
+            duration={1.25}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            showCallback
+          />
+        </div>
         <div
           style={{ transitionDelay: "0ms" }}
           className={`opacity-0 transition-opacity duration-700 text-primary  tracking-[0.2em] sm:text-2xl text-lg z-10 ${
@@ -99,7 +75,7 @@ const Home = () => {
         </ul>
       </div>
 
-      <ul className="navList flex sm:flex-nowrap flex-wrap z-[10] gap-y-3.5 bottom-22 items-center w-full absolute font-alumni justify-around md:text-xl sm:text-2xl text-xl">
+      <ul className="navList flex sm:flex-nowrap flex-wrap z-10 gap-y-3.5 bottom-22 items-center w-full absolute font-alumni justify-around md:text-xl sm:text-2xl text-xl">
         {navLinks.map((element, index) => (
           <li
             key={index}
@@ -115,7 +91,7 @@ const Home = () => {
               className="relative group font-bold hover:text-white flex transition-colors duration-300 items-center justify-center flex-col"
             >
               {element.name}
-              <span className=" -bottom-1 sm:block hidden h-[1px] w-[130%] scale-x-0 origin-center bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100"></span>
+              <span className=" -bottom-1 sm:block hidden h-px w-[130%] scale-x-0 origin-center bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100"></span>
             </a>
           </li>
         ))}

@@ -27,13 +27,12 @@ body {
 }
 
 .portfolio {
-  background-image: linear-gradient(
-    to bottom,
-    var(--color-violet9),
-    var(--color-violet3),
-    var(--color-violet9)
-  );
+  background-image: linear-gradient(to bottom,
+      var(--color-violet9),
+      var(--color-violet3),
+      var(--color-violet9));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -98,8 +97,7 @@ body {
   border: 3px solid transparent;
   background:
     linear-gradient(var(--color-violet9), transparent) padding-box,
-    linear-gradient(to top, var(--color-violet9), var(--color-violet5))
-      border-box;
+    linear-gradient(to top, var(--color-violet9), var(--color-violet5)) border-box;
   border-radius: 15px;
 }
 

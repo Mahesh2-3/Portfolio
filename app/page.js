@@ -56,30 +56,30 @@ export default function Home() {
         />
       </div>
 
-      <section id="home" className="min-h-[100vh] relative z-[5]">
+      <section id="home" className="min-h-screen relative z-5">
         <HomePage />
       </section>
-      <section id="about" className="min-h-[100vh] relative z-[5]">
+      <section id="about" className="min-h-screen relative z-5">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <About />
         </Suspense>
       </section>
-      <section id="skills" className="min-h-[100vh] relative z-[5]">
+      <section id="skills" className="min-h-screen relative z-5">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <Skills />
         </Suspense>
       </section>
-      <section id="projects" className="min-h-[70vh] relative z-[5]">
+      <section id="projects" className="min-h-[70vh] relative z-5">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <Projects />
         </Suspense>
       </section>
-      <section id="experience" className="min-h-[75vh] relative z-[5]">
+      <section id="experience" className="min-h-[75vh] relative z-5">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <Experience />
         </Suspense>
       </section>
-      <section id="get-in-touch" className="min-h-[100vh] relative z-[5]">
+      <section id="get-in-touch" className="min-h-screen relative z-5">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <ContactMe />
         </Suspense>

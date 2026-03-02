@@ -18,21 +18,21 @@ const GlowingCard = ({ word, src }) => {
   return (
     <div
       title={newWord}
-      className="group w-72  fade-in h-96 cursor-pointer font-normal [perspective:1000px]"
+      className="group w-72  fade-in h-96 cursor-pointer font-normal perspective-[1000px]"
       onClick={handleToggle}
     >
       <div
-        className={`relative w-full h-full duration-700 [transform-style:preserve-3d] 
-          ${flipped ? "[transform:rotateY(180deg)]" : ""}
-          group-hover:[transform:rotateY(180deg)]`}
+        className={`relative w-full h-full duration-700 transform-3d 
+          ${flipped ? "transform-[rotateY(180deg)]" : ""}
+          group-hover:transform-[rotateY(180deg)]`}
       >
         {/* Front Side */}
-        <div className="absolute inset-0 glass-bg shadow-lg flex items-center justify-center [backface-visibility:hidden] rounded-2xl">
+        <div className="absolute inset-0 glass-bg shadow-lg flex items-center justify-center backface-hidden rounded-2xl">
           <Image width={80} height={80} src={src} alt="image" />
         </div>
 
         {/* Back Side */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-lg flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-pink-600 rounded-2xl shadow-lg flex items-center justify-center backface-hidden transform-[rotateY(180deg)]">
           <span className="text-white font-bold uppercase tracking-widest">
             {word}
           </span>
