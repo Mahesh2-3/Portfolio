@@ -29,6 +29,7 @@ const ProjectCard = ({ project, onShowTech }) => {
           <a
             href={project.github}
             target="_blank"
+            rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             className="absolute w-12 h-12 cursor-pointer p-3 top-3 right-3 bg-linear-to-tr from-[#6b6868] via-[#302d2d] to-black rounded-full z-10"
           >
@@ -63,6 +64,7 @@ const ProjectCard = ({ project, onShowTech }) => {
             <a
               href={project.link}
               target="_blank"
+              rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className={`text-blue-400 ${project.isGold ? "bg-white/60" : "bg-black"} px-4 py-2 rounded-full flex items-center gap-2 hover:text-blue-300`}
             >
