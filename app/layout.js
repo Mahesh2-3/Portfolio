@@ -29,6 +29,8 @@ export const metadata = {
   },
 };
 
+import LenisScroll from "./components/LenisScroll";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -38,6 +40,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${lilita.variable} ${alumni.variable} ${ubuntu.variable} antialiased`}
       >
+        <LenisScroll />
         {children}
         <Image
           width={56}

@@ -28,6 +28,41 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateHeights);
   }, []);
 
+  useEffect(() => {
+    let ctx;
+    const initParallax = async () => {
+      const gsap = (await import("gsap")).default;
+      const ScrollTrigger = (await import("gsap/ScrollTrigger")).default;
+      gsap.registerPlugin(ScrollTrigger);
+
+      ctx = gsap.context(() => {
+        const sections = gsap.utils.toArray("section");
+        sections.forEach((section) => {
+          gsap.fromTo(
+            section,
+            { backgroundPosition: "50% 0px" },
+            {
+              backgroundPosition: `50% ${window.innerHeight / 2}px`,
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
+            }
+          );
+        });
+      });
+    };
+
+    initParallax();
+
+    return () => {
+      if (ctx) ctx.revert();
+    };
+  }, []);
+
   return (
     <div
       ref={mainref}
