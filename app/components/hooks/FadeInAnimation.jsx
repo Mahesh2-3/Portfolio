@@ -22,46 +22,47 @@ export default function useFadeInAnimation({
   scroller,
 } = {}) {
   useLayoutEffect(() => {
-    const elements = gsap.utils.toArray(selector);
-    const triggers = [];
+    let ctx = gsap.context(() => {
+      let mm = gsap.matchMedia();
 
-    elements.forEach((el) => {
-      gsap.set(el, { opacity: 0, y });
+      mm.add("(min-width: 768px)", () => {
+        const elements = gsap.utils.toArray(selector);
+        gsap.set(elements, { opacity: 0, y });
 
-      const st = ScrollTrigger.create({
-        trigger: el,
-        start: "top 85%",
-        scroller,
-        onEnter: () =>
-          gsap.to(el, {
-            opacity: 1,
-            y: 0,
-            duration,
-            ease: "power2.out",
-          }),
-        onEnterBack: () =>
-          gsap.to(el, {
-            opacity: 1,
-            y: 0,
-            duration,
-            ease: "power2.out",
-          }),
-        onLeave: !once
-          ? () => gsap.to(el, { opacity: 0, y, duration: 0.5 })
-          : undefined,
-        onLeaveBack: !once
-          ? () => gsap.to(el, { opacity: 0, y, duration: 0.5 })
-          : undefined,
+        ScrollTrigger.batch(selector, {
+          start: "top 85%",
+          scroller,
+          onEnter: (batch) =>
+            gsap.to(batch, {
+              opacity: 1,
+              y: 0,
+              duration,
+              stagger: 0.15,
+              ease: "power2.out",
+            }),
+          onEnterBack: (batch) =>
+            gsap.to(batch, {
+              opacity: 1,
+              y: 0,
+              duration,
+              stagger: 0.15,
+              ease: "power2.out",
+            }),
+          onLeave: !once
+            ? (batch) => gsap.to(batch, { opacity: 0, y, duration: 0.5 })
+            : undefined,
+          onLeaveBack: !once
+            ? (batch) => gsap.to(batch, { opacity: 0, y, duration: 0.5 })
+            : undefined,
+        });
       });
 
-      triggers.push(st);
+      mm.add("(max-width: 767px)", () => {
+        const elements = gsap.utils.toArray(selector);
+        gsap.set(elements, { opacity: 1, y: 0 }); // disable animation
+      });
     });
 
-    // Ensure positions are correct after images/fonts load
-    ScrollTrigger.refresh();
-
-    return () => {
-      triggers.forEach((t) => t.kill());
-    };
+    return () => ctx.revert();
   }, [selector, y, duration, once, scroller]);
 }

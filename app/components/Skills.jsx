@@ -30,14 +30,14 @@ const Skills = () => {
               ></div>
 
               {/* Actual glass card */}
-              <div className="relative sm:transition-transform will-change-transform sm:hover:shadow-[0px_4px_0px_4px_#414141] ease-in-out duration-700 sm:hover:translate-y-[-10px]  w-[120px] h-[120px] rounded-xl border bg-violet3/10 border-violet1/20 p-7 flex items-center justify-center">
+              <div className="relative sm:transition-all will-change-transform sm:hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] ease-in-out duration-500 sm:hover:scale-110 sm:hover:-translate-y-3 w-[120px] h-[120px] rounded-xl border bg-violet3/10 border-violet1/20 p-7 flex items-center justify-center">
                 <Image
                   width={64}
                   height={64}
                   src={tech.src}
                   alt={tech.name}
                   loading="lazy"
-                  className="sm:w-16 w-12 h-auto"
+                  className="sm:w-16 w-12 h-auto transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
               <span>{tech.name}</span>

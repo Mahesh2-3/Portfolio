@@ -6,15 +6,54 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { FaRegEye } from "react-icons/fa";
 import Image from "next/image";
 
+import { useRef } from "react";
+import gsap from "gsap";
+
 const ProjectCard = ({ project, onShowTech }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const cardRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current || isFlipped) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -15; // Max rotation 15deg
+    const rotateY = ((x - centerX) / centerX) * 15;
+
+    gsap.to(cardRef.current, {
+      rotateX,
+      rotateY,
+      scale: 1.05,
+      duration: 0.5,
+      ease: "power2.out",
+      transformPerspective: 1000,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    if (!cardRef.current || isFlipped) return;
+    gsap.to(cardRef.current, {
+      rotateX: 0,
+      rotateY: 0,
+      scale: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  };
 
   return (
     <div className="project-card fade-in group w-[350px] h-112 font-normal perspective-[1000px]">
       <div
-        className={`relative w-full b hover:translate-y-[-15px] cursor-pointer h-full duration-700 transform-3d ${
-          isFlipped ? "transform-[rotateY(180deg)]" : ""
-        }`}
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={`relative w-full cursor-pointer h-full transition-transform duration-700`}
+        style={{ transformStyle: "preserve-3d", transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
         onClick={() => setIsFlipped(!isFlipped)}
       >
         {/* Front Side */}
@@ -25,6 +64,7 @@ const ProjectCard = ({ project, onShowTech }) => {
               ? "bg-linear-to-br from-[#2c2100] via-[#bfa100] to-[#1a1400] border border-yellow-400/40 shadow-xl shadow-yellow-500/20"
               : "bg-violet9/80 border-violet3/20"
           }`}
+          style={{ backfaceVisibility: "hidden" }}
         >
           <a
             href={project.github}
@@ -85,11 +125,12 @@ const ProjectCard = ({ project, onShowTech }) => {
         {/* Back Side */}
 
         <div
-          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start p-6 overflow-hidden backface-hidden transform-[rotateY(180deg)] ${
+          className={`absolute inset-0 shadow-lg border rounded-2xl flex flex-col items-start p-6 overflow-hidden backface-hidden ${
             project.isGold
               ? "bg-linear-to-br from-[#554101] to-black border-yellow-500/80 shadow-[0_0_15px_rgba(234,179,8,0.2)]"
               : "bg-violet9 border-violet3/20"
           }`}
+          style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
         >
           <h2
             className={`text-2xl font-bold mb-4 border-b pb-2 w-full ${

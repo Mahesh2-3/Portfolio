@@ -60,13 +60,13 @@ const Home = () => {
         } transition-opacity duration-300 ease-in-out flex-col px-5 relative top-7 lg:items-end items-start justify-center gap-4`}
       >
         <a href={HERO_CONTENT.resumeLink} download="MaheshResume.pdf">
-          <button className="flex gap-2 font-bold tracking-widest items-center rounded-md justify-center bg-violet8 sm:py-3 py-2 cursor-pointer  sm:px-6 px-4 border border-violet4 text-white transition-colors duration-300">
+          <button className="flex gap-2 font-bold tracking-widest items-center rounded-md justify-center bg-violet8 sm:py-3 py-2 cursor-pointer  sm:px-6 px-4 border border-violet4 text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(155,48,255,0.6)]">
             {HERO_CONTENT.resumeText} <FaDownload />{" "}
           </button>
         </a>
         <ul className="flex gap-2 items-center">
           {SocialLinks.map((ele, index) => (
-            <li key={index} className="text-2xl text-white mx-2 my-4">
+            <li key={index} className="text-2xl text-white mx-2 my-4 transition-all duration-300 hover:scale-125 hover:text-violet3 hover:drop-shadow-[0_0_8px_rgba(155,48,255,0.8)]">
               <a title={ele.name} target="__blank" href={ele.src}>
                 <ele.icon />
               </a>
