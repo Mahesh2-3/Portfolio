@@ -67,7 +67,7 @@ const Home = () => {
         <ul className="flex gap-2 items-center">
           {SocialLinks.map((ele, index) => (
             <li key={index} className="text-2xl text-white mx-2 my-4">
-              <a title={ele.name} target="__blank" href={ele.src}>
+              <a title={ele.name} target="_blank" rel="noopener noreferrer" href={ele.src}>
                 <ele.icon />
               </a>
             </li>
