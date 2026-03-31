@@ -91,7 +91,7 @@ export const projects = [
   },
 
   {
-    title: "Free Templates",
+    title: "Free PortfolioTemplates",
     isGold: true,
     link: "https://mahesh-templates.vercel.app",
     desc: "I have created a platform where you can get free portfolio websites for your need just follow the instructions mentions in the website and you can get your own website. and why? i created this platform because many people need the porfolios and they can't afford the paid ones. so i thought to create a platform where they can get free portfolio websites.",
@@ -110,10 +110,10 @@ export const projects = [
     },
   },
   {
-    title: "Todo2.0",
+    title: "Task-Manager 2.0",
     isGold: true,
     link: "https://todo2-0new.vercel.app/",
-    desc: "I developed a full stack Task Managing platform.This is the latest version of our Todo2.0, designed to help you stay organized. You can manage tasks, schedule activities, and maintain a diary all in one place. Here you can see the dashboard with graph and calendar view. The platform is secured with a reliable login system, and you can report issues for quick support.",
+    desc: "I developed a full stack Task Managing platform.This is the latest version of our Task Manager, designed to help you stay organized. You can manage tasks, schedule activities, and maintain a diary all in one place.This application maintains user streak and his progress. Here you can see the dashboard with graph and calendar heat map view. The platform is secured with a reliable login system, and you can report issues for quick support.This platform is built with the latest technologies and it is fully responsive.",
     github: "https://github.com/Mahesh2-3/Todo2.0",
     img: "https://res.cloudinary.com/dhiluevpk/image/upload/w_400,q_auto,f_auto/v1756482687/blog_images/jxxfqgs6zpanyobujvke.png",
     tech: {
@@ -228,15 +228,6 @@ export const projects = [
     img: "https://res.cloudinary.com/dhiluevpk/image/upload/w_400,q_auto,f_auto/v1756482773/blog_images/dulw9jh2wxmbvfzyoumt.jpg",
     tech: ["HTML", "CSS", "JavaScript"],
   },
-  {
-    title: "Netflix Clone",
-    isGold: false,
-    link: "https://netflix-clone-32.vercel.app",
-    desc: "A responsive Netflix Clone built using HTML and Tailwind CSS. This project replicates the sleek UI of Netflix with modern design, including a homepage, sections, and hover effects. The layout is responsive, ensuring a smooth experience across devices. I created this project early in my journey to improve UI skills, focusing on design and responsiveness using Tailwind CSS.",
-    github: "https://github.com/Mahesh2-3/NetflixClone",
-    img: "https://res.cloudinary.com/dhiluevpk/image/upload/w_400,q_auto,f_auto/v1756482725/blog_images/zvwa4whnkwbe3yscxhrf.png",
-    tech: ["HTML", "TailwindCSS"],
-  },
 ];
 
 export const Experiences = [
@@ -265,7 +256,7 @@ export const HERO_CONTENT = {
 export const ABOUT_CONTENT = {
   heading: "About Me",
   description:
-    "HI there, I'm MAHESH, I'm a skilled software developer with experience in JavaScript, and expertise in frameworks like React, Node.js, and Next.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!",
+    "HI there, I'm MAHESH, I'm a skilled Full Stack Developer with experience in JavaScript, and expertise in frameworks like React, Node.js, and Next.js. I'm a quick learner and I love building cool projects, Currently i am trying to expand my knowledge in AI and ML. Let's work together to bring your ideas to life!",
   roles: {
     frontend: "FRONTEND DEVELOPER",
     backend: "BACKEND DEVELOPER",

@@ -10,7 +10,7 @@ const ProjectCard = ({ project, onShowTech }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="project-card fade-in group w-[350px] h-112 font-normal perspective-[1000px]">
+    <div className="project-card fade-in group w-[350px] h-112 font-normal perspective-[1000px] select-none">
       <div
         className={`relative w-full b hover:translate-y-[-15px] cursor-pointer h-full duration-700 transform-3d ${
           isFlipped ? "transform-[rotateY(180deg)]" : ""

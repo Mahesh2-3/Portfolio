@@ -14,7 +14,7 @@ const Skills = () => {
         {SKILLS_CONTENT.heading}
       </h1>
       <div className="w-fit flex items-center p-10 rounded-2xl">
-        <div className="grid grid-cols-2 sm:grid-cols-4 sm:gap-12 gap-8">
+        <div className="grid grid-cols-3 sm:grid-cols-4 sm:gap-12 gap-8">
           {TECH.map((tech) => (
             <div
               key={tech.name}
@@ -30,7 +30,7 @@ const Skills = () => {
               ></div>
 
               {/* Actual glass card */}
-              <div className="relative sm:transition-transform will-change-transform sm:hover:shadow-[0px_4px_0px_4px_#414141] ease-in-out duration-700 sm:hover:translate-y-[-10px]  w-[120px] h-[120px] rounded-xl border bg-violet3/10 border-violet1/20 p-7 flex items-center justify-center">
+              <div className="relative sm:transition-transform will-change-transform sm:hover:shadow-[0px_4px_0px_4px_#414141] ease-in-out duration-700 sm:hover:translate-y-[-10px]  sm:w-[120px] sm:h-[120px] w-[100px] h-[100px] rounded-xl border bg-violet3/10 border-violet1/20 p-7 flex items-center justify-center">
                 <Image
                   width={64}
                   height={64}
@@ -40,7 +40,7 @@ const Skills = () => {
                   className="sm:w-16 w-12 h-auto"
                 />
               </div>
-              <span>{tech.name}</span>
+              <span className="sm:text-base text-xs">{tech.name}</span>
             </div>
           ))}
         </div>
