@@ -73,28 +73,36 @@ const Certificates = () => {
   }, [isHovered]);
 
   return (
-    <div className="w-full py-20 overflow-hidden relative" ref={containerRef}>
+    <div
+      className="w-full py-20 overflow-hidden relative mb-20"
+      ref={containerRef}
+    >
       <div className="text-center mb-10">
-        <h2 className="text-4xl md:text-5xl font-bold heading portfolio">Certificates</h2>
+        <h2 className="text-4xl md:text-5xl font-bold heading portfolio">
+          Certificates
+        </h2>
       </div>
 
       <div className="flex w-max" ref={wrapperRef}>
         {duplicatedCertificates.map((cert, index) => (
           <div
             key={index}
-            className="relative flex-shrink-0 w-80 h-56 mx-4 group cursor-pointer transition-transform duration-500 ease-in-out"
+            className="relative shrink-0 w-80 h-56 mx-4 group cursor-pointer transition-transform duration-500 ease-in-out"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <div className="w-full h-full relative rounded-2xl overflow-hidden border border-violet-800 transition-all duration-300 group-hover:scale-110 group-hover:z-10 shadow-lg shadow-violet-900/20 group-hover:shadow-violet-500/50">
+            <div className="w-full h-full relative rounded-md overflow-hidden border border-violet-800 transition-all duration-300 group-hover:scale-110 group-hover:z-10 shadow-lg shadow-violet-900/20 group-hover:shadow-violet-500/50">
               <img
                 src={cert.link}
                 alt={cert.title}
                 className="w-full h-full object-cover"
               />
               {/* Overlay with Title */}
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 text-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
                 <h3 className="text-white text-xl font-bold">{cert.title}</h3>
+                <h3 className="text-yellow-500 text-lg font-bold">
+                  {cert.source}
+                </h3>
               </div>
             </div>
           </div>

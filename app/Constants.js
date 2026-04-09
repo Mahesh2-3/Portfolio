@@ -307,27 +307,28 @@ export const EXPERIENCE_CONTENT = {
 
 export const CERTIFICATES = [
   {
-    title: "Certificate 1",
-    link: "https://via.placeholder.com/600x400/140026/ffffff?text=Certificate+1",
+    title: "Full Stack Intern - Certificate",
+    source: "Digital Guruji Company",
+    link: "https://res.cloudinary.com/dhiluevpk/image/upload/v1775730400/xo1tphb4q8b4ajzv0sjw.png",
   },
   {
-    title: "Certificate 2",
-    link: "https://via.placeholder.com/600x400/2a0040/ffffff?text=Certificate+2",
+    title: "Responsive Web Design - Certificate",
+    source: "FreeCodeCamp.org",
+    link: "https://res.cloudinary.com/dhiluevpk/image/upload/v1775730417/vasdkjqaowmvtolu7087.png",
   },
   {
-    title: "Certificate 3",
-    link: "https://via.placeholder.com/600x400/400073/ffffff?text=Certificate+3",
+    title: "Backend Development & API's - Certificate",
+    source: "FreeCodeCamp.org",
+    link: "https://res.cloudinary.com/dhiluevpk/image/upload/v1775730431/ukx7odtjenytwrcrvndg.png",
   },
   {
-    title: "Certificate 4",
-    link: "https://via.placeholder.com/600x400/4b0082/ffffff?text=Certificate+4",
+    title: "JavaScript Algorithms & Data Structures - Certificate",
+    source: "FreeCodeCamp.org",
+    link: "https://res.cloudinary.com/dhiluevpk/image/upload/v1775730410/t61midbfhzupublyissu.png",
   },
   {
-    title: "Certificate 5",
-    link: "https://via.placeholder.com/600x400/6a0dad/ffffff?text=Certificate+5",
-  },
-  {
-    title: "Certificate 6",
-    link: "https://via.placeholder.com/600x400/9b30ff/ffffff?text=Certificate+6",
+    title: "Java Basic",
+    source: "HackerRank",
+    link: "https://res.cloudinary.com/dhiluevpk/image/upload/v1775730425/l9vcaljx9opnmy2odmph.png",
   },
 ];
