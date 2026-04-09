@@ -16,6 +16,9 @@ const Experience = dynamic(() => import("./components/Experience"), {
 const ContactMe = dynamic(() => import("./components/ContactMe"), {
   ssr: false,
 });
+const Certificates = dynamic(() => import("./components/Certificates"), {
+  ssr: false,
+});
 
 export default function Home() {
   const mainref = useRef(null);
@@ -77,6 +80,11 @@ export default function Home() {
       <section id="experience" className="min-h-[75vh] relative z-5">
         <Suspense fallback={<div className="text-white">Loading...</div>}>
           <Experience />
+        </Suspense>
+      </section>
+      <section id="certificates" className="min-h-[50vh] relative z-5">
+        <Suspense fallback={<div className="text-white">Loading...</div>}>
+          <Certificates />
         </Suspense>
       </section>
       <section id="get-in-touch" className="min-h-screen relative z-5">

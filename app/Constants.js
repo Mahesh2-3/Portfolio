@@ -304,3 +304,30 @@ export const EXPERIENCE_CONTENT = {
   heading: "Experience",
   subHeading: "What i have done so far",
 };
+
+export const CERTIFICATES = [
+  {
+    title: "Certificate 1",
+    link: "https://via.placeholder.com/600x400/140026/ffffff?text=Certificate+1",
+  },
+  {
+    title: "Certificate 2",
+    link: "https://via.placeholder.com/600x400/2a0040/ffffff?text=Certificate+2",
+  },
+  {
+    title: "Certificate 3",
+    link: "https://via.placeholder.com/600x400/400073/ffffff?text=Certificate+3",
+  },
+  {
+    title: "Certificate 4",
+    link: "https://via.placeholder.com/600x400/4b0082/ffffff?text=Certificate+4",
+  },
+  {
+    title: "Certificate 5",
+    link: "https://via.placeholder.com/600x400/6a0dad/ffffff?text=Certificate+5",
+  },
+  {
+    title: "Certificate 6",
+    link: "https://via.placeholder.com/600x400/9b30ff/ffffff?text=Certificate+6",
+  },
+];
