@@ -89,6 +89,63 @@ export const projects = [
       },
     },
   },
+  {
+    title: "ArchiText (SAAS)",
+    isGold: true,
+    link: "https://archi-text.vercel.app",
+    desc: "ArchiText is an AI-powered software architecture visualization platform that transforms plain-language project descriptions into structured, interactive diagrams. It supports multiple diagram types mind maps, timelines, flowcharts, and radial graphs all rendered in real-time using React Flow. Users can have multi-turn conversations with an AI to iteratively refine their architecture, with each response updating the diagram live. The platform includes full project and conversation history management, multi-theme support, export capabilities (PNG, SVG, PDF, JSON), and a secure authentication system with OTP-based email verification and JWT-based session handling. The backend is powered by Express 5 with MongoDB for persistence, Groq SDK for AI inference, and Winston for structured logging with Swagger API documentation.",
+    github: "https://github.com/Mahesh2-3/ArchiTextProject",
+    img: "https://res.cloudinary.com/dhiluevpk/image/upload/w_400,q_auto,f_auto/v1777709448/k9lgwxmev8ep243neusx.png",
+    tech: {
+      frontend: {
+        framework: ["next", "react", "react-dom"],
+        diagramming: ["@xyflow/react", "dagre"],
+        uiLibraries: [
+          "react-icons",
+          "react-markdown",
+          "react-toastify",
+          "react-resizable-panels",
+          "next-themes",
+          "gsap",
+        ],
+        export: ["html-to-image", "jspdf"],
+        stateManagement: ["zustand"],
+        styling: [
+          "tailwindcss",
+          "@tailwindcss/typography",
+          "@tailwindcss/postcss",
+        ],
+      },
+      backend: {
+        framework: ["express"],
+        database: ["mongoose"],
+        ai: ["groq-sdk"],
+        auth: ["jsonwebtoken", "bcrypt", "cookie-parser"],
+        email: ["nodemailer"],
+        security: [
+          "helmet",
+          "cors",
+          "express-rate-limit",
+          "express-validator",
+          "dotenv",
+        ],
+        logging: ["winston", "winston-daily-rotate-file"],
+        docs: ["swagger-jsdoc", "swagger-ui-express"],
+        utilities: ["uuid"],
+      },
+      devTools: {
+        frontend: [
+          "eslint",
+          "eslint-config-next",
+          "babel-plugin-react-compiler",
+          "@babel/core",
+          "@babel/preset-env",
+        ],
+        backendRunners: ["nodemon"],
+        testing: ["jest", "babel-jest", "supertest", "mongodb-memory-server"],
+      },
+    },
+  },
 
   {
     title: "Free PortfolioTemplates",
@@ -111,7 +168,7 @@ export const projects = [
   },
   {
     title: "Task-Manager 2.0",
-    isGold: true,
+    isGold: false,
     link: "https://todo2-0new.vercel.app/",
     desc: "I developed a full stack Task Managing platform.This is the latest version of our Task Manager, designed to help you stay organized. You can manage tasks, schedule activities, and maintain a diary all in one place.This application maintains user streak and his progress. Here you can see the dashboard with graph and calendar heat map view. The platform is secured with a reliable login system, and you can report issues for quick support.This platform is built with the latest technologies and it is fully responsive.",
     github: "https://github.com/Mahesh2-3/Todo2.0",
